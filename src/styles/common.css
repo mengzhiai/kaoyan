@@ -75,6 +75,39 @@ img {
   float: right;
 }
 
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.flex-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+.flex-between {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .align-center {
   text-align: center;
 }
@@ -107,5 +140,19 @@ img {
 
 .common-title .title-en {
   margin-top: 40px;
+}
+
+.common-bac {
+  width: 100%;
+  height: 530px;
+  background: url("~@/assets/common-bac.png") no-repeat;
+}
+
+.title-white {
+  color: #fff;
+}
+
+.pointer {
+  cursor: pointer;
 }
 /*# sourceMappingURL=common.css.map */
