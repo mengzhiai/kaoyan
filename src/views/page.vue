@@ -12,10 +12,18 @@
     <div class="max-content">
       <common-title titleName="2020年一个硕士文凭，跑赢80%职场人" :imgSrc="require('@/assets/take-tit.png')"></common-title>
       <div class="introduce-wrap flex-center">
-        <div class="item" v-for="(item,i) in introduceList" :key="i" @mouseover="mouseOver(item)" @mouseleave="mouseLeave(item)">
-          <div class="pic">
+        <div class="item" v-for="(item,i) in introduceList" :key="i">
+          <div class="pic" v-if="false">
             <img v-if="active" :class="{active: item.active == true}" :src="item.imgSrc" />
             <img v-if="!active" :class="{active: item.active == false}" :src="item.imgSrcActive" />
+          </div>
+          <div>
+            <div class="pic pic1">
+              <img :src="item.imgSrc" />
+            </div>
+            <div class="pic pic2">
+              <img :src="item.imgSrcActive" />
+            </div>
           </div>
           <div class="txt">
             {{item.name}}
@@ -78,6 +86,55 @@
       </div>
     </div>
   </div>
+  <div class="problem common-module">
+    <common-title titleName="在职考研人，你是否面临以下问题？" :imgSrc="require('@/assets/problem-tit.png')"></common-title>
+    <div class="max-content">
+      <div class="wrap flex-between">
+        <div class="pic">
+          <img :src="problemObj.imgUrl" alt="">
+        </div>
+        <div class="content">
+          <div class="item" v-for="(item,i) in problemObj.problemList" :key="i">{{item}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="curriculum common-module common-bac">
+    <common-title :titleCol="titleWhite" titleName="在职考研就来考研之窗" :imgSrc="require('@/assets/curriculum-tit.png')"></common-title>
+    <div class="max-content">
+      <div class="wrap flex-between">
+        <div class="item" v-for="(item,i) in curriculumList" :key="i">
+          <div class="box">
+            <div class="pic">
+              <img :src="item.imgUrl" alt="">
+            </div>
+            <div class="title">{{item.title}}</div>
+            <div class="type">{{item.type}}</div>
+            <div class="text overflow">{{item.text}}</div>
+            <div class="more">{{item.more}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="service common-module">
+    <common-title titleName="专业的服务体系，享受私人订制" :imgSrc="require('@/assets/service-tit.png')"></common-title>
+  </div>
+  <div class="interview common-module">
+    <common-title titleName="考研之窗提前面试课程内容" :imgSrc="require('@/assets/intervice-tit.png')"></common-title>
+    <div class="max-content">
+      <div class="wrap flex-center">
+        <div class="item" v-for="(item,i) in interviewList" :key="i">
+          <div class="box">
+            <div class="pic">
+              <img :src="item.imgUrl" alt="">
+            </div>
+            <div class="description">{{item.description}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 </template>
 
@@ -112,22 +169,22 @@ export default {
         imgActive: true
       }, {
         id: 2,
-        name: '学历受限',
-        txt: '虽然已是管理层，但每次都不愿意透露自己专本科学历......',
+        name: '升职加薪',
+        txt: '升职压力大，工作遇瓶颈，薪资停滞不前，职场越来越迷茫......',
         imgSrc: require('@/assets/introduce-pic2.png'),
         imgSrcActive: require('@/assets/introduce-pic2a.png'),
         imgActive: true
       }, {
         id: 3,
-        name: '学历受限',
-        txt: '虽然已是管理层，但每次都不愿意透露自己专本科学历......',
+        name: '人脉圈子',
+        txt: '人脉圈子越来越窄，视野和信息频频受阻，难有新发展......',
         imgSrc: require('@/assets/introduce-pic3.png'),
         imgSrcActive: require('@/assets/introduce-pic3a.png'),
         imgActive: true
       }, {
         id: 4,
-        name: '学历受限',
-        txt: '虽然已是管理层，但每次都不愿意透露自己专本科学历......',
+        name: '自我提升',
+        txt: '不想放弃赚钱的职场黄金期，又想拿个管理硕士文凭提升自己的竞争力......',
         imgSrc: require('@/assets/introduce-pic4.png'),
         imgSrcActive: require('@/assets/introduce-pic4a.png'),
         imgActive: true
@@ -185,7 +242,93 @@ export default {
           specialty1: '金融专业',
           specialty2: '财务专业',
           more: '了解详情>>'
+        },
+        {
+          school: '东北大学',
+          specialty1: '金融专业',
+          specialty2: '财务专业',
+          more: '了解详情>>'
+        },
+        {
+          school: '东北大学',
+          specialty1: '金融专业',
+          specialty2: '财务专业',
+          more: '了解详情>>'
+        },
+        {
+          school: '东北大学',
+          specialty1: '金融专业',
+          specialty2: '财务专业',
+          more: '了解详情>>'
+        },
+        {
+          school: '东北大学',
+          specialty1: '金融专业',
+          specialty2: '财务专业',
+          more: '了解详情>>'
         }
+      ],
+
+      problemObj: {
+        imgUrl: require('@/assets/problem-left.jpg'),
+        problemList: ['怎么结合自己的工作选择专业及院校？', '在职研究生的认可度如何？', '在职研跟全日制有什么区别？', '离开学校好多年,好多知识都忘了,怕考不过？', '我的工作忙，平时都没有时间学习？', '在职研究生，是双证学位吗？']
+      },
+
+      curriculumList: [{
+          imgUrl: require('@/assets/curriculum-item1.jpg'),
+          title: '笔试普通班',
+          type: '院校：双非院校',
+          text: '服务内容：报考指导 + 在线答疑 + 跟踪管理 + 信息更新 + 延保服务+模拟真题 +考试计划 + 报考指南 +随堂课件+重播视频了解详情',
+          more: '了解更多'
+        },
+        {
+          imgUrl: require('@/assets/curriculum-item2.jpg'),
+          title: '笔面联报班',
+          type: '院校：211高校',
+          text: '服务内容：报考指导 + 在线答疑 + 跟踪管理 + 延保服务 + 模拟真题 +考试计划 + 报考指南 +随堂课件 + 重播视频+周末面授+面授材料+提面指导',
+          more: '了解更多'
+        },
+        {
+          imgUrl: require('@/assets/curriculum-item3.jpg'),
+          title: '笔面保录班',
+          type: '院校：985高校',
+          text: '服务内容：报考指导 + 在线答疑 + 跟踪管理 + 模拟真题 + 报考指南 + 随堂课件 + 重播视频 + 周末面授 + 面试材料 + 提面指导',
+          more: '了解更多'
+        }
+      ],
+
+      interviewList: [{
+          imgUrl: require('@/assets/interview1.png'),
+          description: '专业一对一综合素质评估'
+        },
+        {
+          imgUrl: require('@/assets/interview2.png'),
+          description: '针对不同院校解读申请材料'
+        },
+        {
+          imgUrl: require('@/assets/interview3.png'),
+          description: '实战案例面试能力强化提升'
+        },
+        {
+          imgUrl: require('@/assets/interview4.png'),
+          description: '全真模拟面试'
+        },
+        {
+          imgUrl: require('@/assets/interview5.png'),
+          description: '面试资料准备填写指导'
+        },
+        {
+          imgUrl: require('@/assets/interview6.png'),
+          description: ''
+        },
+        {
+          imgUrl: require('@/assets/interview7.png'),
+          description: '面试英语个面指导'
+        },
+        {
+          imgUrl: require('@/assets/interview8.png'),
+          description: '实战模拟个面组面'
+        },
       ]
     }
   },
@@ -206,15 +349,7 @@ export default {
     });
 
   },
-  methods: {
-    mouseOver(item) {
-      // item.imgActive = false;
-      this.active = !item.imgActive;
-    },
-    mouseLeave(item) {
-      this.active = item.imgActive;
-    }
-  }
+  methods: {}
 }
 </script>
 
@@ -240,16 +375,32 @@ export default {
       border: 1px solid #fff;
       cursor: pointer;
       position: relative;
+
+      .pic {
+        text-align: center;
+      }
+
+      .pic1 {
+        display: block;
+      }
+
+      .pic2 {
+        display: none;
+      }
+
       transition: all 0.3s;
 
       &:hover {
         border: 1px solid #ccc;
+        color: #fff;
 
-        .cover {
-          display: block;
+        .pic1 {
+          display: none;
         }
 
-        color: #fff;
+        .pic2 {
+          display: block;
+        }
       }
 
       .pic,
@@ -427,10 +578,160 @@ export default {
     .min {
       width: calc((100% - 80%) / 3);
     }
-    .more{
-      &:hover{
+
+    .more {
+      &:hover {
         background-color: #fff489;
       }
+    }
+  }
+}
+
+.problem {
+  margin: 60px 0;
+
+  .wrap {
+    margin: 50px 0;
+
+    .pic,
+    .content {
+      width: 48%;
+    }
+
+    .pic {
+      margin: 30px 0;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .content {
+      .item {
+        width: 100%;
+        height: 66px;
+        line-height: 54px;
+        color: #666;
+        font-size: 28px;
+        padding-left: 20px;
+        margin-bottom: 15px;
+        cursor: pointer;
+        background: url('~@/assets/problem-bg.png') no-repeat 100% 100%;
+
+        &:hover {
+          color: #fff;
+          background: url('~@/assets/problem-bg-active.png') no-repeat 100% 100%;
+        }
+      }
+
+      .item:nth-child(2n) {
+        color: #fff;
+        background: url('~@/assets/problem-bg-active.png') no-repeat 100% 100%;
+      }
+    }
+  }
+}
+
+.curriculum {
+  height: 760px;
+  background: url('~@/assets/curriculum-bg.png') no-repeat;
+  padding: 60px 0 0;
+
+  .wrap {
+    padding: 50px 0;
+
+    .item {
+      width: 28%;
+      padding: 20px;
+      text-align: center;
+      background-color: #fff;
+
+      overflow: hidden;
+
+      .box {
+        transition: all .3s;
+
+        &:hover {
+          transform: scale(1.03, 1.03);
+        }
+      }
+
+      .pic {
+        img {
+          width: 100%;
+        }
+      }
+
+      .title {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 20px 0;
+      }
+
+      .type {
+        font-size: 18px;
+        font-weight: 700;
+        margin: 10px 0;
+      }
+
+      .text {
+        line-height: 26px;
+      }
+
+      .more {
+        width: 173px;
+        height: 33px;
+        margin: 15px auto;
+        background: #378FD0;
+        color: #fff;
+        text-align: center;
+        line-height: 33px;
+        font-size: 18px;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #2768B6;
+        }
+      }
+    }
+  }
+}
+
+.service {
+  margin: 60px 0;
+}
+
+.interview {
+  padding: 60px 0;
+  width: 100%;
+  height: 1000px;
+  background: url("~@/assets/interview-bg.jpg") no-repeat;
+  background-size: cover;
+
+  .wrap {
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #fff;
+    margin: 50px 0;
+  }
+
+  .item {
+    width: calc(100% / 4);
+    text-align: center;
+    // margin-bottom: 30px;
+    // padding: 30px;
+    overflow: hidden;
+    .box{
+      transition: all .3s;
+      &:hover{
+        transform: scale(1.03,1.03);
+        color: #fff;
+        background-color: #2768b6;
+      }
+    }
+    .pic {
+      margin: 30px 0;
     }
   }
 }
