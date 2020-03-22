@@ -6,8 +6,8 @@
         "id": 1,
         "name": "学历受限",
         "txt": "虽然已是管理层，但每次都不愿意透露自己专本科学历......",
-        "imgSrc": "require('../../static/images/banner1.png')",
-        "imgSrcActive": "require('@/assets/introduce-pic1a.png')",
+        "imgSrc": "../../static/images/banner1.png",
+        "imgSrcActive": "../../static/introduce-pic1a.png",
         "imgActive": true
       }
     ]

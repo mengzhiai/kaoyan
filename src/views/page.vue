@@ -159,34 +159,35 @@
 <script>
 import Swiper from 'swiper';
 import commonTitle from '@/components/CommonTitle.vue'
-import data from '../../data.json'
+// import data from '../../../public/data.json'
 export default {
   components: {
     commonTitle
   },
   data() {
     return {
+      // bannerList: data.bannerList,
       bannerList: [{
-          imgURL: require("../../static/images/banner1.png"),
+          imgURL: require('@/assets/banner1.png'),
           id: 1
         },
         {
-          imgURL: require("@/assets/banner2.png"),
+          imgURL: require('@/assets/banner2.png'),
           id: 2
         },
         {
-          imgURL: require("@/assets/banner3.png"),
+          imgURL: require('@/assets/banner3.png'),
           id: 3
         }
       ],
-      introduceObj: data.introduceObj,
-      /* introduceObj: {
+      // introduceObj: data.introduceObj,
+      introduceObj: {
         titleName: '2020年一个硕士文凭，跑赢80%职场人',
         introduceList: [{
           id: 1,
           name: '学历受限',
           txt: '虽然已是管理层，但每次都不愿意透露自己专本科学历......',
-          imgSrc: require('../../static/images/introduce-pic1.png'),
+          imgSrc: require('@/assets/introduce-pic1.png'),
           imgSrcActive: require('@/assets/introduce-pic1a.png'),
           imgActive: true
         }, {
@@ -211,7 +212,7 @@ export default {
           imgSrcActive: require('@/assets/introduce-pic4a.png'),
           imgActive: true
         }],
-      }, */
+      },
       active: true,
       titleWhite: 'title-white',
 
