@@ -163,4 +163,21 @@ img {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
+
+.content-title {
+  width: 100%;
+}
+
+.content-title .title {
+  font-size: 36px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.content-title .line {
+  width: 80%;
+  height: 1px;
+  margin: 10px auto;
+  background-color: #ccc;
+}
 /*# sourceMappingURL=common.css.map */

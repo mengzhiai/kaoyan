@@ -10,13 +10,9 @@
   </div>
   <div class="introduce common-module">
     <div class="max-content">
-      <common-title titleName="2020年一个硕士文凭，跑赢80%职场人" :imgSrc="require('@/assets/take-tit.png')"></common-title>
+      <common-title :titleName="introduceObj.titleName" :imgSrc="require('@/assets/take-tit.png')"></common-title>
       <div class="introduce-wrap flex-center">
-        <div class="item" v-for="(item,i) in introduceList" :key="i">
-          <div class="pic" v-if="false">
-            <img v-if="active" :class="{active: item.active == true}" :src="item.imgSrc" />
-            <img v-if="!active" :class="{active: item.active == false}" :src="item.imgSrcActive" />
-          </div>
+        <div class="item" v-for="(item,i) in introduceObj.introduceList" :key="i">
           <div>
             <div class="pic pic1">
               <img :src="item.imgSrc" />
@@ -121,18 +117,40 @@
     <common-title titleName="专业的服务体系，享受私人订制" :imgSrc="require('@/assets/service-tit.png')"></common-title>
   </div>
   <div class="interview common-module">
-    <common-title titleName="考研之窗提前面试课程内容" :imgSrc="require('@/assets/intervice-tit.png')"></common-title>
+    <common-title :titleCol="titleWhite" titleName="考研之窗提前面试课程内容" :imgSrc="require('@/assets/intervice-tit.png')"></common-title>
     <div class="max-content">
       <div class="wrap flex-center">
         <div class="item" v-for="(item,i) in interviewList" :key="i">
-          <div class="box">
-            <div class="pic">
-              <img :src="item.imgUrl" alt="">
-            </div>
-            <div class="description">{{item.description}}</div>
+          <div class="pic pic1">
+            <img :src="item.imgUrl" alt="" class="img1">
+
           </div>
+          <div class="pic pic2">
+            <img :src="item.imgActive" alt="" class="img2">
+          </div>
+          <div class="description">{{item.description}}</div>
         </div>
       </div>
+      <div class="more">查看更多>></div>
+    </div>
+  </div>
+  <div class="adventage common-module">
+    <common-title :titleName="adventageObj.titleName" :imgSrc="require('@/assets/adventage-tit.jpg')"></common-title>
+    <div class="max-content">
+      <div class="wrap flex">
+        <div class="item" v-for="(item,i) in adventageObj.adventageList" :key="i">
+          <div class="pic pic1">
+            <img :src="item.imgUrl" alt="">
+          </div>
+          <div class="pic pic2">
+            <img :src="item.imgActive" alt="">
+          </div>
+          <div class="view">{{item.view}}</div>
+          <div class="text">{{item.text}}</div>
+          <div class="other">{{item.other}}</div>
+        </div>
+      </div>
+      <div class="more">查看更多>></div>
     </div>
   </div>
 </div>
@@ -141,6 +159,7 @@
 <script>
 import Swiper from 'swiper';
 import commonTitle from '@/components/CommonTitle.vue'
+import data from '../../data.json'
 export default {
   components: {
     commonTitle
@@ -148,7 +167,7 @@ export default {
   data() {
     return {
       bannerList: [{
-          imgURL: require("@/assets/banner1.png"),
+          imgURL: require("../../static/images/banner1.png"),
           id: 1
         },
         {
@@ -160,35 +179,39 @@ export default {
           id: 3
         }
       ],
-      introduceList: [{
-        id: 1,
-        name: '学历受限',
-        txt: '虽然已是管理层，但每次都不愿意透露自己专本科学历......',
-        imgSrc: require('@/assets/introduce-pic1.png'),
-        imgSrcActive: require('@/assets/introduce-pic1a.png'),
-        imgActive: true
-      }, {
-        id: 2,
-        name: '升职加薪',
-        txt: '升职压力大，工作遇瓶颈，薪资停滞不前，职场越来越迷茫......',
-        imgSrc: require('@/assets/introduce-pic2.png'),
-        imgSrcActive: require('@/assets/introduce-pic2a.png'),
-        imgActive: true
-      }, {
-        id: 3,
-        name: '人脉圈子',
-        txt: '人脉圈子越来越窄，视野和信息频频受阻，难有新发展......',
-        imgSrc: require('@/assets/introduce-pic3.png'),
-        imgSrcActive: require('@/assets/introduce-pic3a.png'),
-        imgActive: true
-      }, {
-        id: 4,
-        name: '自我提升',
-        txt: '不想放弃赚钱的职场黄金期，又想拿个管理硕士文凭提升自己的竞争力......',
-        imgSrc: require('@/assets/introduce-pic4.png'),
-        imgSrcActive: require('@/assets/introduce-pic4a.png'),
-        imgActive: true
-      }],
+      introduceObj: data.introduceObj,
+      /* introduceObj: {
+        titleName: '2020年一个硕士文凭，跑赢80%职场人',
+        introduceList: [{
+          id: 1,
+          name: '学历受限',
+          txt: '虽然已是管理层，但每次都不愿意透露自己专本科学历......',
+          imgSrc: require('../../static/images/introduce-pic1.png'),
+          imgSrcActive: require('@/assets/introduce-pic1a.png'),
+          imgActive: true
+        }, {
+          id: 2,
+          name: '升职加薪',
+          txt: '升职压力大，工作遇瓶颈，薪资停滞不前，职场越来越迷茫......',
+          imgSrc: require('@/assets/introduce-pic2.png'),
+          imgSrcActive: require('@/assets/introduce-pic2a.png'),
+          imgActive: true
+        }, {
+          id: 3,
+          name: '人脉圈子',
+          txt: '人脉圈子越来越窄，视野和信息频频受阻，难有新发展......',
+          imgSrc: require('@/assets/introduce-pic3.png'),
+          imgSrcActive: require('@/assets/introduce-pic3a.png'),
+          imgActive: true
+        }, {
+          id: 4,
+          name: '自我提升',
+          txt: '不想放弃赚钱的职场黄金期，又想拿个管理硕士文凭提升自己的竞争力......',
+          imgSrc: require('@/assets/introduce-pic4.png'),
+          imgSrcActive: require('@/assets/introduce-pic4a.png'),
+          imgActive: true
+        }],
+      }, */
       active: true,
       titleWhite: 'title-white',
 
@@ -299,37 +322,85 @@ export default {
 
       interviewList: [{
           imgUrl: require('@/assets/interview1.png'),
+          imgActive: require('@/assets/interviewActive1.png'),
           description: '专业一对一综合素质评估'
         },
         {
           imgUrl: require('@/assets/interview2.png'),
+          imgActive: require('@/assets/interviewActive2.png'),
           description: '针对不同院校解读申请材料'
         },
         {
           imgUrl: require('@/assets/interview3.png'),
+          imgActive: require('@/assets/interviewActive3.png'),
           description: '实战案例面试能力强化提升'
         },
         {
           imgUrl: require('@/assets/interview4.png'),
+          imgActive: require('@/assets/interviewActive4.png'),
           description: '全真模拟面试'
         },
         {
           imgUrl: require('@/assets/interview5.png'),
+          imgActive: require('@/assets/interviewActive5.png'),
           description: '面试资料准备填写指导'
         },
         {
           imgUrl: require('@/assets/interview6.png'),
-          description: ''
-        },
-        {
-          imgUrl: require('@/assets/interview7.png'),
+          imgActive: require('@/assets/interviewActive6.png'),
           description: '面试英语个面指导'
         },
         {
+          imgUrl: require('@/assets/interview7.png'),
+          imgActive: require('@/assets/interviewActive7.png'),
+          description: '案例分析规律总结'
+        },
+        {
           imgUrl: require('@/assets/interview8.png'),
+          imgActive: require('@/assets/interviewActive8.png'),
           description: '实战模拟个面组面'
         },
-      ]
+      ],
+
+      adventageObj: {
+        titleName: '考研之窗——独家优势',
+        adventageList: [{
+            imgUrl: require('@/assets/adventage1.png'),
+            imgActive: require('@/assets/adventageActive1.png'),
+            view: '全名师阵容',
+            text: '课程全部使用内部讲义配备专属联系、测试、模考题，历年真题等作为练习，使您事半功倍',
+            other: ''
+          },
+          {
+            imgUrl: require('@/assets/adventage2.png'),
+            imgActive: require('@/assets/adventageActive2.png'),
+            view: '高校优质资源',
+            text: '课程全部使用内部讲义配备专属联系、测试、模考题，历年真题等作为练习，使您事半功倍',
+            other: ''
+          },
+          {
+            imgUrl: require('@/assets/adventage3.png'),
+            imgActive: require('@/assets/adventageActive3.png'),
+            view: '内部资料',
+            text: '课程全部使用内部讲义配备专属联系、测试、模考题，历年真题等作为练习，使您事半功倍',
+            other: ''
+          },
+          {
+            imgUrl: require('@/assets/adventage4.png'),
+            imgActive: require('@/assets/adventageActive4.png'),
+            view: '专业教务管理',
+            text: '课程全部使用内部讲义配备专属联系、测试、模考题，历年真题等作为练习，使您事半功倍',
+            other: ''
+          },
+          {
+            imgUrl: require('@/assets/adventage5.png'),
+            imgActive: require('@/assets/adventageActive5.png'),
+            view: '专业定向辅导',
+            text: '课程全部使用内部讲义配备专属联系、测试、模考题，历年真题等作为练习，使您事半功倍',
+            other: ''
+          },
+        ]
+      }
     }
   },
   mounted() {
@@ -342,6 +413,9 @@ export default {
       spaceBetween: 30,
       autoplay: true,
       autoplayDisableOnInteraction: false,
+      lazyLoading: true,
+      lazyLoadingInPrevNext: true,
+      lazyLoadingInPrevNextAmount: 2,
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
@@ -705,7 +779,7 @@ export default {
 .interview {
   padding: 60px 0;
   width: 100%;
-  height: 1000px;
+  height: 940px;
   background: url("~@/assets/interview-bg.jpg") no-repeat;
   background-size: cover;
 
@@ -720,19 +794,117 @@ export default {
     width: calc(100% / 4);
     text-align: center;
     // margin-bottom: 30px;
-    // padding: 30px;
+    padding: 50px 0;
     overflow: hidden;
-    .box{
-      transition: all .3s;
-      &:hover{
-        transform: scale(1.03,1.03);
-        color: #fff;
-        background-color: #2768b6;
+    cursor: pointer;
+
+    &:hover {
+      color: #fff;
+      background-color: #2768B6;
+
+      .pic1 {
+        display: none;
+      }
+
+      .pic2 {
+        display: block;
       }
     }
+
     .pic {
-      margin: 30px 0;
+      margin: 30px 50px;
     }
+
+    .pic1 {
+      display: block;
+    }
+
+    .pic2 {
+      display: none;
+    }
+
+    .description {
+      font-size: 22px;
+    }
+  }
+
+  .more {
+    width: 191px;
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    color: #fff;
+    background: #2768b6;
+    margin: 50px auto;
+    cursor: pointer;
+  }
+}
+
+.adventage {
+  padding: 60px 0;
+  background-color: #f0f0f0;
+
+  .wrap {
+    margin: 40px 0;
+  }
+
+  .item {
+    width: calc(100% / 5);
+    text-align: center;
+    padding: 30px;
+    cursor: pointer;
+
+    &:hover {
+      color: #fff;
+      background: #2768b6;
+
+      .pic1 {
+        display: none;
+      }
+
+      .pic2 {
+        display: block;
+      }
+    }
+
+    .pic {
+      height: 170px;
+      line-height: 170px;
+    }
+
+    .pic1 {
+      display: block;
+    }
+
+    .pic2 {
+      display: none;
+    }
+
+    .view {
+      margin: 20px 0;
+      font-size: 22px;
+      font-weight: bold;
+    }
+  }
+
+  .item:nth-child(3) {
+    .pic {
+      img {
+        margin: 50px 0;
+      }
+    }
+  }
+
+  .more {
+    color: #fff;
+    background: #2768b6;
+    width: calc(100% / 5);
+    height: 70px;
+    margin: 0 auto;
+    line-height: 70px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
   }
 }
 </style>

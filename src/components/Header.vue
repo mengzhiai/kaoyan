@@ -59,10 +59,10 @@ export default {
   methods: {
     clickMenu(i, id) {
       this.active = i;
-      /* switch (id) {
+      switch (id) {
         case 1:
           this.$router.push({
-            name: 'main'
+            name: 'page'
           });
           break;
         case 2:
@@ -97,7 +97,7 @@ export default {
           break;
         default:
           return;
-      } */
+      }
     },
   }
 }
