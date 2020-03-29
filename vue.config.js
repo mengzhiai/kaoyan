@@ -1,5 +1,5 @@
 const path = require("path");
-var data = require('./public/data.json')
+// var data = require('./public/data.json')
 function resolve(dir) {
   return path.join(__dirname, dir); //path.join(__dirname)设置绝对路径
 }
@@ -22,16 +22,16 @@ module.exports = {
         //   warnings: true,
         //   errors: true
         // },
-        open: true,
+        open: false,
         host: '192.168.18.12',
         port: 8080,
         https: false,
         hotOnly: false,
-        before (app) {
-          app.get('/data', (req, res) => {
-            res.json(data)
+        /* before (app) {
+          app.get('http://test.jun666.cn/data.json', (req, res) => {
+            console.log(res);
           })
-        },
+        }, */
         /* proxy: {
             '/api': {
                 target: "http://localhost:6000",

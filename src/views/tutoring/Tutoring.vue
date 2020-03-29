@@ -40,6 +40,7 @@
 
 <script>
 import sideMenu from '@/components/SideMenu.vue'
+import data from '@/data.json'
 export default {
   components: {
     sideMenu
@@ -56,9 +57,12 @@ export default {
     }
   },
   mounted() {
-    this.axios.get('/data').then(res => {
-      this.tutoringObj = res.data.tutoringObj;
-    })
+    this.init();
+  },
+  methods:{
+    init(){
+      this.tutoringObj = data.tutoringObj;
+    }
   }
 }
 </script>

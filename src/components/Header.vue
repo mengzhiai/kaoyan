@@ -85,7 +85,6 @@ export default {
   methods: {
     init(width) {
       if (width < 800) {
-        console.log(width);
         this.menuList = false;
         this.flagMenu = 'flagMenu'
       } else {

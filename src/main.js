@@ -4,8 +4,10 @@ import router from "./router";
 import store from "./store";
 import "./styles/common.css";
 import axios from 'axios';
+
 Vue.config.productionTip = false;
 Vue.prototype.axios = axios;
+
 /* const originalPush = router.prototype.push;
 router.prototype.push = function push(location) {
   return originalPush.call(this, location).catch(err => err);

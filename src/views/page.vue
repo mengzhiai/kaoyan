@@ -32,10 +32,10 @@
     </div>
   </div>
   <div class="consult common-module">
-    <common-title :titleCol="titleWhite" titleName="在职硕士报名咨询" :imgSrc="require('@/assets/consult-tit.png')"></common-title>
+    <common-title :titleCol="titleWhite" :titleName="consultObj.titleName" :imgSrc="require('@/assets/consult-tit.png')"></common-title>
     <div class="max-content">
       <div class="wrap flex-center">
-        <div class="item" v-for="(item,i) in consultList" :key="i">
+        <div class="item" v-for="(item,i) in consultObj.consultList" :key="i">
           <div class="pic">
             <img :src="item.imgSrc" alt="">
           </div>
@@ -67,10 +67,10 @@
 
   </div>
   <div class="select-major common-module">
-    <common-title :titleCol="titleWhite" titleName="2020在职硕如何选择报考院校" :imgSrc="require('@/assets/major-tit.png')"></common-title>
+    <common-title :titleCol="titleWhite" :titleName="majorObj.titleName" :imgSrc="require('@/assets/major-tit.png')"></common-title>
     <div class="max-content">
       <div class="wrap">
-        <div class="item" v-for="(item,i) in majorList" :key="i">
+        <div class="item" v-for="(item,i) in majorObj.majorList" :key="i">
           <div class="school max">{{item.school}}</div>
           <div class="min"><img src="@/assets/arrow.png" alt=""></div>
           <div class="specialty max">{{item.specialty1}}</div>
@@ -159,86 +159,81 @@
 <script>
 import Swiper from 'swiper';
 import commonTitle from '@/components/CommonTitle.vue'
-// import data from '../../../public/data.json'
+import data from '@/data.json'
 export default {
   components: {
     commonTitle
   },
   data() {
     return {
-      /* bannerList: [{
-          imgURL: '@/assets/banner1.png',
-          id: 1
+      bannerList: [{
+          "imgURL": "/images/banner1.png",
+          "id": 1
         },
         {
-          imgURL: '@/assets/banner2.png',
-          id: 2
+          "imgURL": "/images/banner2.png",
+          "id": 2
         },
         {
-          imgURL: '@/assets/banner3.png',
-          id: 3
+          "imgURL": "/images/banner3.png",
+          "id": 3
         }
-      ], */
-      bannerList:[],
-      introduceObj:{},
+      ],
+      introduceObj: {},
       active: true,
       titleWhite: 'title-white',
 
       //报名咨询
-      consultList:[],
+      consultObj: {},
       //报考流程
-      flowObject:{},
+      flowObject: {},
 
       //报考院校
-      majorList:[],
+      majorObj: {},
 
-      problemObj:{},
+      problemObj: {},
 
-      curriculumList:[],
+      curriculumList: [],
 
-      interviewList:[],
+      interviewList: [],
 
-      adventageObj:{}
+      adventageObj: {}
     }
   },
-  created() {
-  },
+  created() {},
   mounted() {
+    this.init();
     var swiper = new Swiper('.swiper-container', {
-      slidesPerView: 1,
+      // slidesPerView: 1,
       // freeMode: true,
       // loop: true,
-      speed: 1000,
-      // autoplay: 1000,
-      spaceBetween: 30,
+      speed: 2000,
+      // spaceBetween: 30,
       autoplay: true,
       autoplayDisableOnInteraction: false,
       lazyLoading: true,
       lazyLoadingInPrevNext: true,
-      lazyLoadingInPrevNextAmount: 2,
+      lazyLoadingInPrevNextAmount: 1,
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
-      }
+      },
+      paginationClickable: true,
     });
     this.interview();
-    this.axios.get('/data').then(res=>{
-      // console.log(res.data);
-      // this._data = res.data;
-      let data = res.data;
-      this.bannerList = data.bannerList;
-      console.log(this.bannerList);
+  },
+  methods: {
+    init() {
+      // this.bannerList = data.bannerList;
       this.introduceObj = data.introduceObj;
-      this.consultList = data.consultList;
+      this.consultObj = data.consultObj;
       this.flowObject = data.flowObject;
-      this.majorList = data.majorList;
+      this.majorObj = data.majorObj;
       this.problemObj = data.problemObj;
       this.curriculumList = data.curriculumList;
       this.interviewList = data.interviewList;
       this.adventageObj = data.adventageObj;
-    })
-  },
-  methods: {
+    },
     interview() {
       this.init = setInterval(() => {
         this.light = this.light + 1;
@@ -254,7 +249,7 @@ export default {
       if (doms) {
         doms.dispatchEvent(event);
       }
-    },
+    }
   }
 }
 </script>

@@ -52,38 +52,41 @@
   },
   "active": true,
   "titleWhite": "title-white",
-  "consultList": [
-    {
-      "id": 1,
-      "imgSrc": "/images/consult1.png",
-      "txt": "报考条件查询",
-      "more": "了解更多"
-    },
-    {
-      "id": 2,
-      "imgSrc": "/images/consult2.png",
-      "txt": "报考院校选择",
-      "more": "了解更多"
-    },
-    {
-      "id": 3,
-      "imgSrc": "/images/consult3.png",
-      "txt": "报考专业选择",
-      "more": "了解更多"
-    },
-    {
-      "id": 4,
-      "imgSrc": "/images/consult4.png",
-      "txt": "提前面试信息",
-      "more": "了解更多"
-    },
-    {
-      "id": 5,
-      "imgSrc": "/images/consult5.png",
-      "txt": "考试科目信息",
-      "more": "了解更多"
-    }
-  ],
+  "consultObj": {
+    "titleName": "在职硕士报名咨询",
+    "consultList": [
+      {
+        "id": 1,
+        "imgSrc": "/images/consult1.png",
+        "txt": "报考条件查询",
+        "more": "了解更多"
+      },
+      {
+        "id": 2,
+        "imgSrc": "/images/consult2.png",
+        "txt": "报考院校选择",
+        "more": "了解更多"
+      },
+      {
+        "id": 3,
+        "imgSrc": "/images/consult3.png",
+        "txt": "报考专业选择",
+        "more": "了解更多"
+      },
+      {
+        "id": 4,
+        "imgSrc": "/images/consult4.png",
+        "txt": "提前面试信息",
+        "more": "了解更多"
+      },
+      {
+        "id": 5,
+        "imgSrc": "/images/consult5.png",
+        "txt": "考试科目信息",
+        "more": "了解更多"
+      }
+    ]
+  },
   "flowObject": {
     "stepList": ["提前面试", "网上报名", "现场确认", "笔试考试", "院校复试"],
     "dateList": [
@@ -94,44 +97,47 @@
       "2021年3 - 4月"
     ]
   },
-  "majorList": [
-    {
-      "school": "东北大学",
-      "specialty1": "金融专业",
-      "specialty2": "财务专业",
-      "more": "了解详情>>"
-    },
-    {
-      "school": "东北大学",
-      "specialty1": "金融专业",
-      "specialty2": "财务专业",
-      "more": "了解详情>>"
-    },
-    {
-      "school": "东北大学",
-      "specialty1": "金融专业",
-      "specialty2": "财务专业",
-      "more": "了解详情>>"
-    },
-    {
-      "school": "东北大学",
-      "specialty1": "金融专业",
-      "specialty2": "财务专业",
-      "more": "了解详情>>"
-    },
-    {
-      "school": "东北大学",
-      "specialty1": "金融专业",
-      "specialty2": "财务专业",
-      "more": "了解详情>>"
-    },
-    {
-      "school": "东北大学",
-      "specialty1": "金融专业",
-      "specialty2": "财务专业",
-      "more": "了解详情>>"
-    }
-  ],
+  "majorObj": {
+    "titleName": "2020在职硕如何选择报考院校",
+    "majorList": [
+      {
+        "school": "东北大学",
+        "specialty1": "金融专业",
+        "specialty2": "财务专业",
+        "more": "了解详情>>"
+      },
+      {
+        "school": "东北大学",
+        "specialty1": "金融专业",
+        "specialty2": "财务专业",
+        "more": "了解详情>>"
+      },
+      {
+        "school": "东北大学",
+        "specialty1": "金融专业",
+        "specialty2": "财务专业",
+        "more": "了解详情>>"
+      },
+      {
+        "school": "东北大学",
+        "specialty1": "金融专业",
+        "specialty2": "财务专业",
+        "more": "了解详情>>"
+      },
+      {
+        "school": "东北大学",
+        "specialty1": "金融专业",
+        "specialty2": "财务专业",
+        "more": "了解详情>>"
+      },
+      {
+        "school": "东北大学",
+        "specialty1": "金融专业",
+        "specialty2": "财务专业",
+        "more": "了解详情>>"
+      }
+    ]
+  },
   "problemObj": {
     "imgUrl": "/images/problem-left.jpg",
     "problemList": [

@@ -42,6 +42,7 @@
 
 <script>
 import sideMenu from '@/components/SideMenu.vue'
+import data from '@/data.json'
 export default {
   components: {
     sideMenu
@@ -58,12 +59,13 @@ export default {
     }
   },
   mounted() {
-    this.axios.get('/data').then(res=>{
-      this.contactObj = res.data.contactObj;
-    })
+    this.init();
     this.createMap();
   },
   methods: {
+    init(){
+      this.contactObj = data.contactObj;
+    },
     createMap() {
       this.$nextTick(
         function () {
