@@ -18,6 +18,28 @@ export default {
   components: {
     headerComponent,
     footerComponent
-  }
+  },
+  data() {
+    return {
+
+    }
+  },
+  mounted() {
+    /* window.addEventListener('beforeunload', e => {
+      window.localStorage.removeItem('menuActive')
+    }); */
+    window.onbeforeunload = function (e) {
+      var storage = window.localStorage;
+      storage.clear()
+    }
+  },
 }
 </script>
+
+<style scoped>
+@media screen and (max-width: 800px) {
+  .container-box {
+    padding-top: 60px;
+  }
+}
+</style>

@@ -1,4 +1,5 @@
 const path = require("path");
+var data = require('./public/data.json')
 function resolve(dir) {
   return path.join(__dirname, dir); //path.join(__dirname)设置绝对路径
 }
@@ -15,18 +16,23 @@ module.exports = {
       .set("@", resolve("./src"))
       .set("components", resolve("./src/components"));
     //set第一个参数：设置的别名，第二个参数：设置的路径
-  }
-  /* devServer: {
+  },
+  devServer: {
         // overlay: {
         //   warnings: true,
         //   errors: true
         // },
         open: true,
-        host: 'localhost',
-        port: 9090,
+        host: '192.168.18.12',
+        port: 8080,
         https: false,
         hotOnly: false,
-        proxy: {
+        before (app) {
+          app.get('/data', (req, res) => {
+            res.json(data)
+          })
+        },
+        /* proxy: {
             '/api': {
                 target: "http://localhost:6000",
                 changeOrigin: true,
@@ -35,6 +41,6 @@ module.exports = {
                     "^/api": ''
                 }
             }
-        }
-    } */
+        } */
+    }
 };

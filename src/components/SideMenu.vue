@@ -93,4 +93,16 @@ export default {
     }
   }
 }
+
+@media screen and (max-width: 1000px){
+  .side-menu{
+    .chinese{
+      font-size: 24px;
+    }
+  }
+  
+}
+.side-title{
+  height: 100px;
+}
 </style>

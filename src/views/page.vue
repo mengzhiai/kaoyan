@@ -31,7 +31,7 @@
       </div>
     </div>
   </div>
-  <div class="consult common-module common-bac">
+  <div class="consult common-module">
     <common-title :titleCol="titleWhite" titleName="在职硕士报名咨询" :imgSrc="require('@/assets/consult-tit.png')"></common-title>
     <div class="max-content">
       <div class="wrap flex-center">
@@ -70,7 +70,7 @@
     <common-title :titleCol="titleWhite" titleName="2020在职硕如何选择报考院校" :imgSrc="require('@/assets/major-tit.png')"></common-title>
     <div class="max-content">
       <div class="wrap">
-        <div class="item flex" v-for="(item,i) in majorList" :key="i">
+        <div class="item" v-for="(item,i) in majorList" :key="i">
           <div class="school max">{{item.school}}</div>
           <div class="min"><img src="@/assets/arrow.png" alt=""></div>
           <div class="specialty max">{{item.specialty1}}</div>
@@ -95,7 +95,7 @@
       </div>
     </div>
   </div>
-  <div class="curriculum common-module common-bac">
+  <div class="curriculum common-module">
     <common-title :titleCol="titleWhite" titleName="在职考研就来考研之窗" :imgSrc="require('@/assets/curriculum-tit.png')"></common-title>
     <div class="max-content">
       <div class="wrap flex-between">
@@ -113,7 +113,7 @@
       </div>
     </div>
   </div>
-  <div class="service common-module">
+  <div class="service common-module" v-if="false">
     <common-title titleName="专业的服务体系，享受私人订制" :imgSrc="require('@/assets/service-tit.png')"></common-title>
   </div>
   <div class="interview common-module">
@@ -150,7 +150,7 @@
           <div class="other">{{item.other}}</div>
         </div>
       </div>
-      <div class="more">查看更多>></div>
+      <div class="more" @click="goLink">查看更多</div>
     </div>
   </div>
 </div>
@@ -166,243 +166,42 @@ export default {
   },
   data() {
     return {
-      // bannerList: data.bannerList,
-      bannerList: [{
-          imgURL: require('@/assets/banner1.png'),
+      /* bannerList: [{
+          imgURL: '@/assets/banner1.png',
           id: 1
         },
         {
-          imgURL: require('@/assets/banner2.png'),
+          imgURL: '@/assets/banner2.png',
           id: 2
         },
         {
-          imgURL: require('@/assets/banner3.png'),
+          imgURL: '@/assets/banner3.png',
           id: 3
         }
-      ],
-      // introduceObj: data.introduceObj,
-      introduceObj: {
-        titleName: '2020年一个硕士文凭，跑赢80%职场人',
-        introduceList: [{
-          id: 1,
-          name: '学历受限',
-          txt: '虽然已是管理层，但每次都不愿意透露自己专本科学历......',
-          imgSrc: require('@/assets/introduce-pic1.png'),
-          imgSrcActive: require('@/assets/introduce-pic1a.png'),
-          imgActive: true
-        }, {
-          id: 2,
-          name: '升职加薪',
-          txt: '升职压力大，工作遇瓶颈，薪资停滞不前，职场越来越迷茫......',
-          imgSrc: require('@/assets/introduce-pic2.png'),
-          imgSrcActive: require('@/assets/introduce-pic2a.png'),
-          imgActive: true
-        }, {
-          id: 3,
-          name: '人脉圈子',
-          txt: '人脉圈子越来越窄，视野和信息频频受阻，难有新发展......',
-          imgSrc: require('@/assets/introduce-pic3.png'),
-          imgSrcActive: require('@/assets/introduce-pic3a.png'),
-          imgActive: true
-        }, {
-          id: 4,
-          name: '自我提升',
-          txt: '不想放弃赚钱的职场黄金期，又想拿个管理硕士文凭提升自己的竞争力......',
-          imgSrc: require('@/assets/introduce-pic4.png'),
-          imgSrcActive: require('@/assets/introduce-pic4a.png'),
-          imgActive: true
-        }],
-      },
+      ], */
+      bannerList:[],
+      introduceObj:{},
       active: true,
       titleWhite: 'title-white',
 
       //报名咨询
-      consultList: [{
-          id: 1,
-          imgSrc: require('@/assets/consult1.png'),
-          txt: '报考条件查询',
-          more: '了解更多'
-        },
-        {
-          id: 2,
-          imgSrc: require('@/assets/consult2.png'),
-          txt: '报考院校选择',
-          more: '了解更多'
-        },
-        {
-          id: 3,
-          imgSrc: require('@/assets/consult3.png'),
-          txt: '报考专业选择',
-          more: '了解更多'
-        },
-        {
-          id: 4,
-          imgSrc: require('@/assets/consult4.png'),
-          txt: '提前面试信息',
-          more: '了解更多'
-        },
-        {
-          id: 5,
-          imgSrc: require('@/assets/consult5.png'),
-          txt: '考试科目信息',
-          more: '了解更多'
-        }
-      ],
+      consultList:[],
       //报考流程
-      flowObject: {
-        stepList: ["提前面试", "网上报名", "现场确认", "笔试考试", "院校复试"],
-        dateList: ["2020年3 - 10月", "2020年10月开始", "2020年11月开始", "2020年12月考试", "2021年3 - 4月"]
-      },
+      flowObject:{},
 
       //报考院校
-      majorList: [{
-          school: '东北大学',
-          specialty1: '金融专业',
-          specialty2: '财务专业',
-          more: '了解详情>>'
-        },
-        {
-          school: '东北大学',
-          specialty1: '金融专业',
-          specialty2: '财务专业',
-          more: '了解详情>>'
-        },
-        {
-          school: '东北大学',
-          specialty1: '金融专业',
-          specialty2: '财务专业',
-          more: '了解详情>>'
-        },
-        {
-          school: '东北大学',
-          specialty1: '金融专业',
-          specialty2: '财务专业',
-          more: '了解详情>>'
-        },
-        {
-          school: '东北大学',
-          specialty1: '金融专业',
-          specialty2: '财务专业',
-          more: '了解详情>>'
-        },
-        {
-          school: '东北大学',
-          specialty1: '金融专业',
-          specialty2: '财务专业',
-          more: '了解详情>>'
-        }
-      ],
+      majorList:[],
 
-      problemObj: {
-        imgUrl: require('@/assets/problem-left.jpg'),
-        problemList: ['怎么结合自己的工作选择专业及院校？', '在职研究生的认可度如何？', '在职研跟全日制有什么区别？', '离开学校好多年,好多知识都忘了,怕考不过？', '我的工作忙，平时都没有时间学习？', '在职研究生，是双证学位吗？']
-      },
+      problemObj:{},
 
-      curriculumList: [{
-          imgUrl: require('@/assets/curriculum-item1.jpg'),
-          title: '笔试普通班',
-          type: '院校：双非院校',
-          text: '服务内容：报考指导 + 在线答疑 + 跟踪管理 + 信息更新 + 延保服务+模拟真题 +考试计划 + 报考指南 +随堂课件+重播视频了解详情',
-          more: '了解更多'
-        },
-        {
-          imgUrl: require('@/assets/curriculum-item2.jpg'),
-          title: '笔面联报班',
-          type: '院校：211高校',
-          text: '服务内容：报考指导 + 在线答疑 + 跟踪管理 + 延保服务 + 模拟真题 +考试计划 + 报考指南 +随堂课件 + 重播视频+周末面授+面授材料+提面指导',
-          more: '了解更多'
-        },
-        {
-          imgUrl: require('@/assets/curriculum-item3.jpg'),
-          title: '笔面保录班',
-          type: '院校：985高校',
-          text: '服务内容：报考指导 + 在线答疑 + 跟踪管理 + 模拟真题 + 报考指南 + 随堂课件 + 重播视频 + 周末面授 + 面试材料 + 提面指导',
-          more: '了解更多'
-        }
-      ],
+      curriculumList:[],
 
-      interviewList: [{
-          imgUrl: require('@/assets/interview1.png'),
-          imgActive: require('@/assets/interviewActive1.png'),
-          description: '专业一对一综合素质评估'
-        },
-        {
-          imgUrl: require('@/assets/interview2.png'),
-          imgActive: require('@/assets/interviewActive2.png'),
-          description: '针对不同院校解读申请材料'
-        },
-        {
-          imgUrl: require('@/assets/interview3.png'),
-          imgActive: require('@/assets/interviewActive3.png'),
-          description: '实战案例面试能力强化提升'
-        },
-        {
-          imgUrl: require('@/assets/interview4.png'),
-          imgActive: require('@/assets/interviewActive4.png'),
-          description: '全真模拟面试'
-        },
-        {
-          imgUrl: require('@/assets/interview5.png'),
-          imgActive: require('@/assets/interviewActive5.png'),
-          description: '面试资料准备填写指导'
-        },
-        {
-          imgUrl: require('@/assets/interview6.png'),
-          imgActive: require('@/assets/interviewActive6.png'),
-          description: '面试英语个面指导'
-        },
-        {
-          imgUrl: require('@/assets/interview7.png'),
-          imgActive: require('@/assets/interviewActive7.png'),
-          description: '案例分析规律总结'
-        },
-        {
-          imgUrl: require('@/assets/interview8.png'),
-          imgActive: require('@/assets/interviewActive8.png'),
-          description: '实战模拟个面组面'
-        },
-      ],
+      interviewList:[],
 
-      adventageObj: {
-        titleName: '考研之窗——独家优势',
-        adventageList: [{
-            imgUrl: require('@/assets/adventage1.png'),
-            imgActive: require('@/assets/adventageActive1.png'),
-            view: '全名师阵容',
-            text: '课程全部使用内部讲义配备专属联系、测试、模考题，历年真题等作为练习，使您事半功倍',
-            other: ''
-          },
-          {
-            imgUrl: require('@/assets/adventage2.png'),
-            imgActive: require('@/assets/adventageActive2.png'),
-            view: '高校优质资源',
-            text: '课程全部使用内部讲义配备专属联系、测试、模考题，历年真题等作为练习，使您事半功倍',
-            other: ''
-          },
-          {
-            imgUrl: require('@/assets/adventage3.png'),
-            imgActive: require('@/assets/adventageActive3.png'),
-            view: '内部资料',
-            text: '课程全部使用内部讲义配备专属联系、测试、模考题，历年真题等作为练习，使您事半功倍',
-            other: ''
-          },
-          {
-            imgUrl: require('@/assets/adventage4.png'),
-            imgActive: require('@/assets/adventageActive4.png'),
-            view: '专业教务管理',
-            text: '课程全部使用内部讲义配备专属联系、测试、模考题，历年真题等作为练习，使您事半功倍',
-            other: ''
-          },
-          {
-            imgUrl: require('@/assets/adventage5.png'),
-            imgActive: require('@/assets/adventageActive5.png'),
-            view: '专业定向辅导',
-            text: '课程全部使用内部讲义配备专属联系、测试、模考题，历年真题等作为练习，使您事半功倍',
-            other: ''
-          },
-        ]
-      }
+      adventageObj:{}
     }
+  },
+  created() {
   },
   mounted() {
     var swiper = new Swiper('.swiper-container', {
@@ -422,9 +221,41 @@ export default {
         clickable: true,
       }
     });
-
+    this.interview();
+    this.axios.get('/data').then(res=>{
+      // console.log(res.data);
+      // this._data = res.data;
+      let data = res.data;
+      this.bannerList = data.bannerList;
+      console.log(this.bannerList);
+      this.introduceObj = data.introduceObj;
+      this.consultList = data.consultList;
+      this.flowObject = data.flowObject;
+      this.majorList = data.majorList;
+      this.problemObj = data.problemObj;
+      this.curriculumList = data.curriculumList;
+      this.interviewList = data.interviewList;
+      this.adventageObj = data.adventageObj;
+    })
   },
-  methods: {}
+  methods: {
+    interview() {
+      this.init = setInterval(() => {
+        this.light = this.light + 1;
+        if (this.light > 3) {
+          this.light = 1
+        }
+      }, 3000);
+    },
+    goLink() {
+      //window.open("http://www.kaoyanzhichuang.com/", '_blank')
+      let doms = document.getElementById("nb_icon_wrap");
+      const event = new Event('click');
+      if (doms) {
+        doms.dispatchEvent(event);
+      }
+    },
+  }
 }
 </script>
 
@@ -432,6 +263,8 @@ export default {
 @import '../styles/swiper.css';
 
 .swiper-container {
+  z-index: -1;
+
   img {
     width: 100%;
     max-height: 600px;
@@ -524,8 +357,64 @@ export default {
   }
 }
 
+@media screen and(max-width: 800px) {
+  .introduce {
+    padding: 20px 0;
+
+    .introduce-wrap {
+      margin: 10px 0;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      .item {
+        width: calc(100% / 2 - 4px);
+        padding: 20px 0;
+
+        .box {
+          width: 80%;
+          margin: 0 auto;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+        }
+      }
+    }
+  }
+}
+
+@media screen and(max-width: 800px) {
+  .introduce {
+    .introduce-wrap {
+      .item {
+        padding: 10px 0;
+
+        .pic {
+          img {
+            width: 60%;
+          }
+        }
+
+        .txt {
+          font-size: 14px;
+          padding: 5px 0;
+        }
+
+        .box {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
 .consult {
-  padding: 60px 0;
+  padding: 80px 0;
+  width: 100%;
+  // height: 600px;
+  background: url('~@/assets/common-bac.png') no-repeat;
+  background-size: 100% 500px;
 
   .wrap {
     margin-top: 60px;
@@ -565,6 +454,91 @@ export default {
         &:hover {
           background-color: #0b67a5;
 
+        }
+      }
+    }
+  }
+}
+
+@media screen and(max-width: 1200px) {
+  .consult {
+    margin: 0 0 80px;
+    padding: 50px 0;
+    height: auto;
+    background-size: 100% 600px;
+  }
+}
+
+@media screen and(max-width: 1000px) {
+  .consult {
+    .wrap {
+      margin-top: 30px;
+
+      .item {
+        .txt {
+          font-size: 20px;
+          padding: 20px 0;
+        }
+
+        .more {
+          font-size: 18px;
+          height: 30px;
+          line-height: 30px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and(max-width: 800px) {
+  .consult {
+    padding: 20px 0;
+    background-size: 100% 100%;
+
+    .wrap {
+      margin-top: 20px;
+      justify-content: start;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      .item {
+        width: calc(100% / 2);
+        margin-bottom: 30px;
+
+        .pic {
+          img {
+            width: 30%;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and(max-width: 600px) {
+  .consult {
+    margin-bottom: 30px;
+
+    .wrap {
+      padding-top: 20px;
+
+      .item {
+        margin-bottom: 20px;
+
+        .pic {
+          height: 60px;
+        }
+
+        .txt {
+          font-size: 16px;
+          padding: 10px 0;
+        }
+
+        .more {
+          height: 26px;
+          line-height: 28px;
+          font-size: 16px;
         }
       }
     }
@@ -622,15 +596,20 @@ export default {
   }
 }
 
+@media screen and(max-width: 600px) {}
+
 .select-major {
-  height: 700px;
+  height: 750px;
   background: url('~@/assets/bg-4.png') no-repeat;
+  // background-size: 100% auto;
   padding: 60px 0 0;
 
   .wrap {
     margin: 60px 0;
 
     .item {
+      display: flex;
+
       >div {
         text-align: center;
         font-size: 24px;
@@ -657,6 +636,70 @@ export default {
     .more {
       &:hover {
         background-color: #fff489;
+      }
+    }
+  }
+}
+
+@media screen and(max-width: 1000px) {
+  .select-major {
+    // height: 600px;
+    height: auto;
+    background-size: 100% 100%;
+    padding: 30px 0;
+
+    .wrap {
+      margin: 20px 0 10px;
+
+      .item {
+        >div {
+          font-size: 20px;
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and(max-width: 800px) {
+  .select-major {
+    background-size: 100% 100%;
+    padding: 20px 0;
+
+    .wrap {
+      margin: 10px 0 0;
+
+      .item {
+        >div {
+          font-size: 16px;
+          height: 30px;
+          line-height: 30px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and(max-width: 800px) {
+  .select-major {
+    .wrap {
+      .item {
+        >div {
+          font-size: 14px;
+          margin: 1px;
+          line-height: 34px;
+        }
+
+        .max {
+          padding: 0 2px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
       }
     }
   }
@@ -691,6 +734,9 @@ export default {
         padding-left: 20px;
         margin-bottom: 15px;
         cursor: pointer;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
         background: url('~@/assets/problem-bg.png') no-repeat 100% 100%;
 
         &:hover {
@@ -707,10 +753,73 @@ export default {
   }
 }
 
+@media screen and (max-width: 1000px) {
+  .problem {
+    margin: 40px 0;
+
+    .wrap {
+      .content {
+        .item {
+          height: 50px;
+          line-height: 40px;
+          font-size: 20px;
+          padding-left: 10px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .problem {
+    .flex-between {
+      display: block;
+    }
+
+    .wrap {
+      .pic {
+        width: 100%;
+        margin: 10px 0;
+      }
+
+      .content {
+        width: 100%;
+        overflow: hidden;
+
+        .item {
+          background-size: 100% 100%;
+
+          &:hover {
+            color: #fff;
+            background: url('~@/assets/problem-bg-active.png') no-repeat;
+            background-size: 100% 100%;
+          }
+        }
+
+        .item:nth-child(2n) {
+          background-size: 100% 100%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .problem {
+    margin: 30px 0 20px;
+
+    .wrap {
+      margin: 10px 0;
+    }
+  }
+}
+
 .curriculum {
   height: 760px;
   background: url('~@/assets/curriculum-bg.png') no-repeat;
-  padding: 60px 0 0;
+  background-size: 100% 100%;
+  padding: 50px 0 0;
 
   .wrap {
     padding: 50px 0;
@@ -773,16 +882,93 @@ export default {
   }
 }
 
+@media screen and (max-width: 1200px) {
+  .curriculum {
+    height: auto;
+    padding: 30px 0;
+
+    .wrap {
+      padding: 30px 0;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .curriculum {
+    .wrap {
+      padding: 10px 0;
+
+      .item {
+        width: calc(100% / 3 - 1%);
+        padding: 0;
+
+        .title {
+          font-size: 18px;
+          margin: 10px 0;
+        }
+
+        .type {
+          font-size: 16px;
+          margin: 5px 0;
+        }
+
+        .text {
+          font-size: 14px;
+          padding: 0 5px;
+          line-height: 24px;
+        }
+
+        .more {
+          width: 60%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .curriculum {
+    padding: 10px 0;
+
+    .wrap {
+      .item {
+        padding-bottom: 20px;
+
+        .title {
+          font-size: 16px;
+          margin: 5px 0;
+        }
+
+        .type {
+          font-size: 14px;
+        }
+
+        .text {
+          font-size: 12px;
+          line-height: 20px;
+        }
+
+        .more {
+          display: none;
+          height: 20px;
+          line-height: 22px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
 .service {
   margin: 60px 0;
 }
 
 .interview {
-  padding: 60px 0;
+  padding: 40px 0;
   width: 100%;
-  height: 940px;
+  // height: 940px;
   background: url("~@/assets/interview-bg.jpg") no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
 
   .wrap {
     flex-direction: row;
@@ -838,6 +1024,108 @@ export default {
     background: #2768b6;
     margin: 50px auto;
     cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .interview {
+    padding: 30px 0 20px;
+    margin: 30px 0;
+
+    .wrap {
+      margin: 30px 0;
+    }
+
+    .item {
+      padding: 30px 0;
+
+      .description {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .interview {
+    .item {
+      padding: 15px 0;
+
+      .pic {
+        img {
+          width: 70%;
+        }
+      }
+
+      .description {
+        font-size: 16px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+
+    .more {
+      width: 100px;
+      height: 40px;
+      line-height: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .interview {
+    .flex-center {
+      justify-content: start;
+    }
+
+    .item {
+      width: calc(100% / 3);
+
+      .pic {
+        img {
+          width: 90%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .interview {
+    margin: 20px 0;
+    padding: 10px 0;
+
+    .wrap {
+      margin: 10px 0;
+    }
+
+    .item {
+      padding: 5px 0;
+
+      .pic {
+        margin: 20px 30px;
+      }
+
+      .description {
+        font-size: 14px;
+        overflow: inherit;
+        white-space: inherit;
+        /* overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; */
+        height: 40px;
+        padding: 0 3px;
+      }
+    }
+
+    .more {
+      margin: 20px auto 10px;
+      height: 30px;
+      line-height: 32px;
+      font-size: 16px;
+      border-radius: 5px;
+    }
   }
 }
 
@@ -906,6 +1194,127 @@ export default {
     font-size: 24px;
     text-align: center;
     cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .adventage {
+    .item {
+      padding: 15px;
+      width: 20%;
+
+      .pic {
+        width: 80%;
+        margin: 0 auto;
+        height: auto;
+        line-height: normal;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .text {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+      }
+    }
+
+    .item:nth-child(3) {
+      .pic {
+        img {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .adventage {
+    .item {
+      .view {
+        font-size: 18px;
+        margin: 10px 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .adventage {
+    padding: 30px 0;
+
+    .flex {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .item {
+      width: calc(100% / 2);
+      padding: 20px 0;
+
+      .pic {
+        text-align: center;
+
+        img {
+          width: 80%;
+        }
+      }
+    }
+
+    .more {
+      width: 160px;
+      height: 40px;
+      border-radius: 5px;
+      line-height: 40px;
+      font-size: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .adventage {
+    padding: 10px 0 20px;
+
+    .wrap {
+      margin: 20px 0;
+    }
+
+    .item {
+      .pic {
+        height: 150px;
+
+        img {
+          width: 60%;
+        }
+      }
+
+      .text {
+        padding: 0 5px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .adventage {
+    .item {
+      .pic {
+        height: 100px;
+      }
+    }
+
+    .more {
+      width: 100px;
+      height: 30px;
+      line-height: 30px;
+      font-size: 16px;
+
+    }
   }
 }
 </style>
