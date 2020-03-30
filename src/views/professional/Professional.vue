@@ -14,7 +14,7 @@
           <div class="line"></div>
         </div>
         <div class="detail flex-between">
-          <div class="item" v-for="(item,i) in professionalObj.professionalList" :key="i">
+          <div class="item" v-for="(item,i) in professionalObj.professionalList" :key="i" @click="goNewWeb">
             <div class="pic">
               <img :src="item.imgUrl" alt="">
             </div>
@@ -50,6 +50,9 @@ export default {
   methods:{
     init(){
       this.professionalObj = data.professionalObj;
+    },
+    goNewWeb(){
+      window.open('http://www.kaoyanzhichuang.com/',"_blank")
     }
   }
 }

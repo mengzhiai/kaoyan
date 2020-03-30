@@ -2,7 +2,7 @@
 <div>
   <div class="swiper-container" ref="slider">
     <div class="swiper-wrapper">
-      <div class="swiper-slide" v-for="(item,i) in bannerList" :key="i">
+      <div class="swiper-slide" v-for="(item,i) in bannerList" :key="i" @click="goSession">
         <img :src="item.imgURL" alt="">
       </div>
     </div>
@@ -12,7 +12,7 @@
     <div class="max-content">
       <common-title :titleName="introduceObj.titleName" :imgSrc="require('@/assets/take-tit.png')"></common-title>
       <div class="introduce-wrap flex-center">
-        <div class="item" v-for="(item,i) in introduceObj.introduceList" :key="i">
+        <div class="item" v-for="(item,i) in introduceObj.introduceList" :key="i" @click="goSession">
           <div>
             <div class="pic pic1">
               <img :src="item.imgSrc" />
@@ -35,12 +35,12 @@
     <common-title :titleCol="titleWhite" :titleName="consultObj.titleName" :imgSrc="require('@/assets/consult-tit.png')"></common-title>
     <div class="max-content">
       <div class="wrap flex-center">
-        <div class="item" v-for="(item,i) in consultObj.consultList" :key="i">
+        <div class="item" v-for="(item,i) in consultObj.consultList" :key="i" @click="goSession">
           <div class="pic">
             <img :src="item.imgSrc" alt="">
           </div>
           <div class="txt">{{item.txt}}</div>
-          <div class="more">{{item.more}}</div>
+          <div class="more" @click.stop="goSession">{{item.more}}</div>
         </div>
       </div>
     </div>
@@ -77,7 +77,7 @@
           <div class="min"><img src="@/assets/arrow.png" alt=""></div>
           <div class="specialty max">{{item.specialty2}}</div>
           <div class="min"><img src="@/assets/arrow.png" alt=""></div>
-          <div class="more max pointer">{{item.more}}</div>
+          <div class="more max pointer" @click="goSession">{{item.more}}</div>
         </div>
       </div>
     </div>
@@ -90,7 +90,7 @@
           <img :src="problemObj.imgUrl" alt="">
         </div>
         <div class="content">
-          <div class="item" v-for="(item,i) in problemObj.problemList" :key="i">{{item}}</div>
+          <div class="item" v-for="(item,i) in problemObj.problemList" :key="i" @click="goSession">{{item}}</div>
         </div>
       </div>
     </div>
@@ -99,7 +99,7 @@
     <common-title :titleCol="titleWhite" titleName="在职考研就来考研之窗" :imgSrc="require('@/assets/curriculum-tit.png')"></common-title>
     <div class="max-content">
       <div class="wrap flex-between">
-        <div class="item" v-for="(item,i) in curriculumList" :key="i">
+        <div class="item" v-for="(item,i) in curriculumList" :key="i" @click="goSession">
           <div class="box">
             <div class="pic">
               <img :src="item.imgUrl" alt="">
@@ -107,20 +107,32 @@
             <div class="title">{{item.title}}</div>
             <div class="type">{{item.type}}</div>
             <div class="text overflow">{{item.text}}</div>
-            <div class="more">{{item.more}}</div>
+            <div class="more" @click.stop="goSession">{{item.more}}</div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="service common-module" v-if="false">
-    <common-title titleName="专业的服务体系，享受私人订制" :imgSrc="require('@/assets/service-tit.png')"></common-title>
+  <div class="service common-module">
+    <common-title :titleName="serviceObj.titleName" :imgSrc="require('@/assets/service-tit.png')"></common-title>
+    <div class="max-content">
+      <div class="wrap flex-between">
+        <div class="item" v-for="(item,i) in serviceObj.serviceList" :key="i" @click="goSession">
+          <div class="pic"><img src="@/assets/people.png" alt=""></div>
+          <div class="tit">{{item.title}}</div>
+          <div class="text">
+            <div>{{item.text1}}</div>
+            <div>{{item.text2}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="interview common-module">
     <common-title :titleCol="titleWhite" titleName="考研之窗提前面试课程内容" :imgSrc="require('@/assets/intervice-tit.png')"></common-title>
     <div class="max-content">
       <div class="wrap flex-center">
-        <div class="item" v-for="(item,i) in interviewList" :key="i">
+        <div class="item" v-for="(item,i) in interviewList" :key="i" @click="goSession">
           <div class="pic pic1">
             <img :src="item.imgUrl" alt="" class="img1">
 
@@ -131,14 +143,14 @@
           <div class="description">{{item.description}}</div>
         </div>
       </div>
-      <div class="more">查看更多>></div>
+      <div class="more" @click="goSession">查看更多</div>
     </div>
   </div>
   <div class="adventage common-module">
     <common-title :titleName="adventageObj.titleName" :imgSrc="require('@/assets/adventage-tit.jpg')"></common-title>
     <div class="max-content">
       <div class="wrap flex">
-        <div class="item" v-for="(item,i) in adventageObj.adventageList" :key="i">
+        <div class="item" v-for="(item,i) in adventageObj.adventageList" :key="i" @click="goSession">
           <div class="pic pic1">
             <img :src="item.imgUrl" alt="">
           </div>
@@ -150,13 +162,17 @@
           <div class="other">{{item.other}}</div>
         </div>
       </div>
-      <div class="more" @click="goLink">查看更多</div>
+      <div class="more" @click="goSession">查看更多</div>
     </div>
   </div>
 </div>
 </template>
 
 <script>
+import {
+  commonLink,
+  blank
+} from '../until/common'
 import Swiper from 'swiper';
 import commonTitle from '@/components/CommonTitle.vue'
 import data from '@/data.json'
@@ -167,15 +183,15 @@ export default {
   data() {
     return {
       bannerList: [{
-          "imgURL": "/images/banner1.png",
+          "imgURL": "/images/banner-new1.jpg",
           "id": 1
         },
         {
-          "imgURL": "/images/banner2.png",
+          "imgURL": "/images/banner-new2.png",
           "id": 2
         },
         {
-          "imgURL": "/images/banner3.png",
+          "imgURL": "/images/banner-new3.jpg",
           "id": 3
         }
       ],
@@ -194,6 +210,35 @@ export default {
       problemObj: {},
 
       curriculumList: [],
+
+      serviceObj: {
+        titleName: '专业的服务体系，享受私人订制',
+        serviceList: [{
+            imgURL: require('@/assets/people.png'),
+            title: '获取专业规划',
+            text1: '尊享VIP专业导师',
+            text2: '一对一职业规划'
+          },
+          {
+            imgURL: '/images/people.png',
+            title: '获取备考攻略',
+            text1: '考核方式科学',
+            text2: '一对一择校、面试策略'
+          },
+          {
+            imgURL: '/images/people.png',
+            title: '申请个人评估',
+            text1: '尊享VIP备考专家',
+            text2: '笔试复习评估与规划'
+          },
+          {
+            imgURL: '/images/people.png',
+            title: '即刻加入学习',
+            text1: '尊享VIP私定基础提升',
+            text2: '让您迅速进入备考状态'
+          }
+        ]
+      },
 
       interviewList: [],
 
@@ -249,6 +294,9 @@ export default {
       if (doms) {
         doms.dispatchEvent(event);
       }
+    },
+    goSession() {
+      window.open(commonLink, "framename")
     }
   }
 }
@@ -258,11 +306,30 @@ export default {
 @import '../styles/swiper.css';
 
 .swiper-container {
+  .swiper-slide {
+    cursor: pointer;
+
+    img {
+      cursor: pointer;
+    }
+  }
+}
+
+.swiper-container {
   z-index: -1;
 
   img {
     width: 100%;
-    max-height: 600px;
+    max-height: 700px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .swiper-container {
+
+    img {
+      max-height: 200px;
+    }
   }
 }
 
@@ -596,7 +663,7 @@ export default {
 .select-major {
   height: 750px;
   background: url('~@/assets/bg-4.png') no-repeat;
-  // background-size: 100% auto;
+  background-size: 100% 100%;
   padding: 60px 0 0;
 
   .wrap {
@@ -956,6 +1023,115 @@ export default {
 
 .service {
   margin: 60px 0;
+
+  .wrap {
+    margin: 50px 0;
+
+    .item {
+      width: calc(100% / 4 - 20px);
+      text-align: center;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      transition: all .2s linear;
+
+      &:hover {
+        // color: #fff;
+        // background-color: #0672C2;
+        box-shadow: 0 0 10px 1px #ddd;
+        transform: translate3d(0, -2px, 0);
+      }
+
+      .pic {
+        margin: 30px 0;
+      }
+
+      .tit {
+        font-size: 30px;
+        margin: 20px 0;
+      }
+
+      .text {
+        font-size: 26px;
+
+        >div {
+          margin: 15px 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .service {
+    .wrap {
+      .item {
+        .tit {
+          font-size: 22px;
+        }
+
+        .text {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .service {
+    margin: 30px 0;
+
+    .wrap {
+      margin: 20px 0;
+
+      .item {
+        width: calc(100% / 2 - 10px);
+        margin-bottom: 20px;
+
+        .pic {
+          margin: 10px 0;
+        }
+
+        .tit {
+          font-size: 18px;
+        }
+
+        .text {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .service {
+    .wrap {
+      .item {
+        .pic {
+          margin: 5px 0;
+
+          img {
+            width: 40%;
+          }
+        }
+
+        .tit {
+          font-size: 16px;
+          margin: 5px 0;
+          font-weight: bold;
+        }
+
+        .text {
+          font-size: 14px;
+
+          >div {
+            margin: 10px 0;
+          }
+        }
+      }
+    }
+  }
 }
 
 .interview {

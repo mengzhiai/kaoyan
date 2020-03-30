@@ -14,7 +14,7 @@
           <div class="line"></div>
         </div>
         <div class="detail">
-          <div class="item flex pointer" v-for="(item,i) in informationObj.informationList" :key="i">
+          <div class="item flex pointer" v-for="(item,i) in informationObj.informationList" :key="i" @click="goNewWeb">
             <div class="pic">
               <img :src="item.imgUrl" alt="">
             </div>
@@ -55,6 +55,9 @@ export default {
   methods:{
     init(){
       this.informationObj = data.informationObj;
+    },
+    goNewWeb(){
+      window.open('http://www.kaoyanzhichuang.com/',"_blank")
     }
   }
 }

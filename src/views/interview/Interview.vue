@@ -20,7 +20,7 @@
               <img :src="item.imgUrl" alt="">
             </div>
             <div class="text overflow">{{item.text}}</div>
-            <div class="btn">了解详情</div>
+            <div class="btn" @click="goNewWeb">了解详情</div>
           </div>
         </div>
         <div class="detail2">
@@ -61,6 +61,9 @@ export default {
   methods:{
     init(){
       this.interviewObj = data.interviewObj;
+    },
+    goNewWeb(){
+      window.open('http://www.kaoyanzhichuang.com/',"_blank")
     }
   }
 }
