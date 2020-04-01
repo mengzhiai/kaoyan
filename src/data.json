@@ -104,37 +104,37 @@
         "school": "东北大学",
         "specialty1": "金融专业",
         "specialty2": "财务专业",
-        "more": "了解详情>>"
+        "more": "了解详情"
       },
       {
         "school": "东北大学",
         "specialty1": "金融专业",
         "specialty2": "财务专业",
-        "more": "了解详情>>"
+        "more": "了解详情"
       },
       {
         "school": "东北大学",
         "specialty1": "金融专业",
         "specialty2": "财务专业",
-        "more": "了解详情>>"
+        "more": "了解详情"
       },
       {
         "school": "东北大学",
         "specialty1": "金融专业",
         "specialty2": "财务专业",
-        "more": "了解详情>>"
+        "more": "了解详情"
       },
       {
         "school": "东北大学",
         "specialty1": "金融专业",
         "specialty2": "财务专业",
-        "more": "了解详情>>"
+        "more": "了解详情"
       },
       {
         "school": "东北大学",
         "specialty1": "金融专业",
         "specialty2": "财务专业",
-        "more": "了解详情>>"
+        "more": "了解详情"
       }
     ]
   },
@@ -212,6 +212,11 @@
       "imgUrl": "/images/interview8.png",
       "imgActive": "/images/interviewActive8.png",
       "description": "实战模拟个面组面"
+    },
+    {
+      "imgUrl": "/images/interview2.png",
+      "imgActive": "/images/interviewActive2.png",
+      "description": "更多"
     }
   ],
   "adventageObj": {

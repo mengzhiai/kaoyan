@@ -446,7 +446,7 @@ export default {
   }
 }
 
-@media screen and(max-width: 800px) {
+@media screen and(max-width: 600px) {
   .introduce {
     .introduce-wrap {
       .item {
@@ -573,6 +573,10 @@ export default {
             height: auto;
           }
         }
+      }
+
+      .item:nth-of-type(3) {
+        display: none;
       }
     }
   }
@@ -1186,6 +1190,10 @@ export default {
     }
   }
 
+  .item:nth-last-child(1) {
+    display: none;
+  }
+
   .more {
     width: 191px;
     height: 55px;
@@ -1259,6 +1267,11 @@ export default {
         }
       }
     }
+
+    .item:nth-last-child(1) {
+      display: block;
+    }
+
   }
 }
 
@@ -1435,6 +1448,9 @@ export default {
           width: 80%;
         }
       }
+    }
+    .item:nth-last-child(1){
+      display: none;
     }
 
     .more {
