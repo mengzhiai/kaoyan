@@ -1,265 +1,289 @@
 {
-  "bannerList": [
-    {
-      "imgURL": "/images/banner1.png",
-      "id": 1
-    },
-    {
-      "imgURL": "/images/banner2.png",
-      "id": 2
-    },
-    {
-      "imgURL": "/images/banner3.png",
-      "id": 3
-    }
-  ],
-  "introduceObj": {
-    "titleName": "2020年一个硕士文凭，跑赢80%职场人",
-    "introduceList": [
-      {
-        "id": 1,
-        "name": "学历受限",
-        "txt": "虽然已是管理层，但每次都不愿意透露自己专本科学历......",
-        "imgSrc": "/images/introduce-pic1.png",
-        "imgSrcActive": "/images/introduce-pic1a.png",
-        "imgActive": true
-      },
-      {
-        "id": 2,
-        "name": "升职加薪",
-        "txt": "升职压力大，工作遇瓶颈，薪资停滞不前，职场越来越迷茫......",
-        "imgSrc": "/images/introduce-pic2.png",
-        "imgSrcActive": "/images/introduce-pic2a.png",
-        "imgActive": true
-      },
-      {
-        "id": 3,
-        "name": "人脉圈子",
-        "txt": "人脉圈子越来越窄，视野和信息频频受阻，难有新发展......",
-        "imgSrc": "/images/introduce-pic3.png",
-        "imgSrcActive": "/images/introduce-pic3a.png",
-        "imgActive": true
-      },
-      {
-        "id": 4,
-        "name": "自我提升",
-        "txt": "不想放弃赚钱的职场黄金期，又想拿个管理硕士文凭提升自己的竞争力......",
-        "imgSrc": "/images/introduce-pic4.png",
-        "imgSrcActive": "/images/introduce-pic4a.png",
-        "imgActive": true
-      }
-    ]
-  },
-  "active": true,
-  "titleWhite": "title-white",
-  "consultObj": {
-    "titleName": "在职硕士报名咨询",
-    "consultList": [
-      {
-        "id": 1,
-        "imgSrc": "/images/consult1.png",
-        "txt": "报考条件查询",
-        "more": "了解更多"
-      },
-      {
-        "id": 2,
-        "imgSrc": "/images/consult2.png",
-        "txt": "报考院校选择",
-        "more": "了解更多"
-      },
-      {
-        "id": 3,
-        "imgSrc": "/images/consult3.png",
-        "txt": "报考专业选择",
-        "more": "了解更多"
-      },
-      {
-        "id": 4,
-        "imgSrc": "/images/consult4.png",
-        "txt": "提前面试信息",
-        "more": "了解更多"
-      },
-      {
-        "id": 5,
-        "imgSrc": "/images/consult5.png",
-        "txt": "考试科目信息",
-        "more": "了解更多"
-      }
-    ]
-  },
-  "flowObject": {
-    "stepList": ["提前面试", "网上报名", "现场确认", "笔试考试", "院校复试"],
-    "dateList": [
-      "2020年3 - 10月",
-      "2020年10月开始",
-      "2020年11月开始",
-      "2020年12月考试",
-      "2021年3 - 4月"
-    ]
-  },
-  "majorObj": {
-    "titleName": "2020在职硕如何选择报考院校",
-    "majorList": [
-      {
-        "school": "东北大学",
-        "specialty1": "金融专业",
-        "specialty2": "财务专业",
-        "more": "了解详情"
-      },
-      {
-        "school": "东北大学",
-        "specialty1": "金融专业",
-        "specialty2": "财务专业",
-        "more": "了解详情"
-      },
-      {
-        "school": "东北大学",
-        "specialty1": "金融专业",
-        "specialty2": "财务专业",
-        "more": "了解详情"
-      },
-      {
-        "school": "东北大学",
-        "specialty1": "金融专业",
-        "specialty2": "财务专业",
-        "more": "了解详情"
-      },
-      {
-        "school": "东北大学",
-        "specialty1": "金融专业",
-        "specialty2": "财务专业",
-        "more": "了解详情"
-      },
-      {
-        "school": "东北大学",
-        "specialty1": "金融专业",
-        "specialty2": "财务专业",
-        "more": "了解详情"
-      }
-    ]
-  },
-  "problemObj": {
-    "imgUrl": "/images/problem-left.jpg",
-    "problemList": [
-      "怎么结合自己的工作选择专业及院校？",
-      "在职研究生的认可度如何？",
-      "在职研跟全日制有什么区别？",
-      "离开学校好多年,好多知识都忘了,怕考不过？",
-      "我的工作忙，平时都没有时间学习？",
-      "在职研究生，是双证学位吗？"
-    ]
-  },
-  "curriculumList": [
-    {
-      "imgUrl": "/images/curriculum-item1.jpg",
-      "title": "笔试普通班",
-      "type": "院校：双非院校",
-      "text": "服务内容：报考指导 + 在线答疑 + 跟踪管理 + 信息更新 + 延保服务+模拟真题 +考试计划 + 报考指南 +随堂课件+重播视频了解详情",
-      "more": "了解更多"
-    },
-    {
-      "imgUrl": "/images/curriculum-item2.jpg",
-      "title": "笔面联报班",
-      "type": "院校：211高校",
-      "text": "服务内容：报考指导 + 在线答疑 + 跟踪管理 + 延保服务 + 模拟真题 +考试计划 + 报考指南 +随堂课件 + 重播视频+周末面授+面授材料+提面指导",
-      "more": "了解更多"
-    },
-    {
-      "imgUrl": "/images/curriculum-item3.jpg",
-      "title": "笔面保录班",
-      "type": "院校：985高校",
-      "text": "服务内容：报考指导 + 在线答疑 + 跟踪管理 + 模拟真题 + 报考指南 + 随堂课件 + 重播视频 + 周末面授 + 面试材料 + 提面指导",
-      "more": "了解更多"
-    }
-  ],
-  "interviewList": [
-    {
-      "imgUrl": "/images/interview1.png",
-      "imgActive": "/images/interviewActive1.png",
-      "description": "专业一对一综合素质评估"
-    },
-    {
-      "imgUrl": "/images/interview2.png",
-      "imgActive": "/images/interviewActive2.png",
-      "description": "针对不同院校解读申请材料"
-    },
-    {
-      "imgUrl": "/images/interview3.png",
-      "imgActive": "/images/interviewActive3.png",
-      "description": "实战案例面试能力强化提升"
-    },
-    {
-      "imgUrl": "/images/interview4.png",
-      "imgActive": "/images/interviewActive4.png",
-      "description": "全真模拟面试"
-    },
-    {
-      "imgUrl": "/images/interview5.png",
-      "imgActive": "/images/interviewActive5.png",
-      "description": "面试资料准备填写指导"
-    },
-    {
-      "imgUrl": "/images/interview6.png",
-      "imgActive": "/images/interviewActive6.png",
-      "description": "面试英语个面指导"
-    },
-    {
-      "imgUrl": "/images/interview7.png",
-      "imgActive": "/images/interviewActive7.png",
-      "description": "案例分析规律总结"
-    },
-    {
-      "imgUrl": "/images/interview8.png",
-      "imgActive": "/images/interviewActive8.png",
-      "description": "实战模拟个面组面"
-    },
-    {
-      "imgUrl": "/images/interview2.png",
-      "imgActive": "/images/interviewActive2.png",
-      "description": "更多"
-    }
-  ],
-  "adventageObj": {
-    "titleName": "考研之窗——独家优势",
-    "adventageList": [
-      {
-        "imgUrl": "/images/adventage1.png",
-        "imgActive": "/images/adventageActive1.png",
-        "view": "全名师阵容",
-        "text": "课程全部使用内部讲义配备专属联系、测试、模考题，历年真题等作为练习，使您事半功倍",
-        "other": ""
-      },
-      {
-        "imgUrl": "/images/adventage2.png",
-        "imgActive": "/images/adventageActive2.png",
-        "view": "高校优质资源",
-        "text": "课程全部使用内部讲义配备专属联系、测试、模考题，历年真题等作为练习，使您事半功倍",
-        "other": ""
-      },
-      {
-        "imgUrl": "/images/adventage3.png",
-        "imgActive": "/images/adventageActive3.png",
-        "view": "内部资料",
-        "text": "课程全部使用内部讲义配备专属联系、测试、模考题，历年真题等作为练习，使您事半功倍",
-        "other": ""
-      },
-      {
-        "imgUrl": "/images/adventage4.png",
-        "imgActive": "/images/adventageActive4.png",
-        "view": "专业教务管理",
-        "text": "课程全部使用内部讲义配备专属联系、测试、模考题，历年真题等作为练习，使您事半功倍",
-        "other": ""
-      },
-      {
-        "imgUrl": "/images/adventage5.png",
-        "imgActive": "/images/adventageActive5.png",
-        "view": "专业定向辅导",
-        "text": "课程全部使用内部讲义配备专属联系、测试、模考题，历年真题等作为练习，使您事半功倍",
-        "other": ""
-      }
-    ]
-  },
-  "aboutObj": {
+	"bannerList": [{
+			"imgURL": "/images/banner-new1.jpg",
+			"id": 1
+		},
+		{
+			"imgURL": "/images/banner-new2.png",
+			"id": 2
+		},
+		{
+			"imgURL": "/images/banner-new3.jpg",
+			"id": 3
+		}
+	],
+	"introduceObj": {
+		"titleName": "2020年一个硕士文凭，跑赢80%职场人",
+		"introduceList": [{
+				"id": 1,
+				"name": "学历受限",
+				"txt": "虽然已是管理层，但每次都不愿意透露自己专本科学历......",
+				"imgSrc": "/images/introduce-pic1.png",
+				"imgSrcActive": "/images/introduce-pic1a.png",
+				"imgActive": true
+			},
+			{
+				"id": 2,
+				"name": "升职加薪",
+				"txt": "升职压力大，工作遇瓶颈，薪资停滞不前，职场越来越迷茫......",
+				"imgSrc": "/images/introduce-pic2.png",
+				"imgSrcActive": "/images/introduce-pic2a.png",
+				"imgActive": true
+			},
+			{
+				"id": 3,
+				"name": "人脉圈子",
+				"txt": "人脉圈子越来越窄，视野和信息频频受阻，难有新发展......",
+				"imgSrc": "/images/introduce-pic3.png",
+				"imgSrcActive": "/images/introduce-pic3a.png",
+				"imgActive": true
+			},
+			{
+				"id": 4,
+				"name": "自我提升",
+				"txt": "不想放弃赚钱的职场黄金期，又想拿个管理硕士文凭提升自己的竞争力......",
+				"imgSrc": "/images/introduce-pic4.png",
+				"imgSrcActive": "/images/introduce-pic4a.png",
+				"imgActive": true
+			}
+		]
+	},
+	"active": true,
+	"titleWhite": "title-white",
+	"consultObj": {
+		"titleName": "在职硕士报名咨询",
+		"consultList": [{
+				"id": 1,
+				"imgSrc": "/images/consult1.png",
+				"txt": "报考条件查询",
+				"more": "了解更多"
+			},
+			{
+				"id": 2,
+				"imgSrc": "/images/consult2.png",
+				"txt": "报考院校选择",
+				"more": "了解更多"
+			},
+			{
+				"id": 3,
+				"imgSrc": "/images/consult3.png",
+				"txt": "报考专业选择",
+				"more": "了解更多"
+			},
+			{
+				"id": 4,
+				"imgSrc": "/images/consult4.png",
+				"txt": "提前面试信息",
+				"more": "了解更多"
+			},
+			{
+				"id": 5,
+				"imgSrc": "/images/consult5.png",
+				"txt": "考试科目信息",
+				"more": "了解更多"
+			}
+		]
+	},
+	"flowObject": {
+		"stepList": ["提前面试", "网上报名", "现场确认", "笔试考试", "院校复试"],
+		"dateList": [
+			"2020年3 - 10月",
+			"2020年10月开始",
+			"2020年11月开始",
+			"2020年12月考试",
+			"2021年3 - 4月"
+		]
+	},
+	"majorObj": {
+		"titleName": "2020在职硕如何选择报考院校",
+		"majorList": [{
+				"school": "东北大学",
+				"specialty1": "金融专业",
+				"specialty2": "财务专业",
+				"more": "了解详情"
+			},
+			{
+				"school": "东北大学",
+				"specialty1": "金融专业",
+				"specialty2": "财务专业",
+				"more": "了解详情"
+			},
+			{
+				"school": "东北大学",
+				"specialty1": "金融专业",
+				"specialty2": "财务专业",
+				"more": "了解详情"
+			},
+			{
+				"school": "东北大学",
+				"specialty1": "金融专业",
+				"specialty2": "财务专业",
+				"more": "了解详情"
+			},
+			{
+				"school": "东北大学",
+				"specialty1": "金融专业",
+				"specialty2": "财务专业",
+				"more": "了解详情"
+			},
+			{
+				"school": "东北大学",
+				"specialty1": "金融专业",
+				"specialty2": "财务专业",
+				"more": "了解详情"
+			}
+		]
+	},
+	"problemObj": {
+		"titleName": "在职考研人，你是否面临以下问题？",
+		"imgUrl": "/images/problem-left.jpg",
+		"problemList": [
+			"怎么结合自己的工作选择专业及院校？",
+			"在职研究生的认可度如何？",
+			"在职研跟全日制有什么区别？",
+			"离开学校好多年,好多知识都忘了,怕考不过？",
+			"我的工作忙，平时都没有时间学习？",
+			"在职研究生，是双证学位吗？"
+		]
+	},
+	"serviceObj": {
+		"titleName": "专业的服务体系，享受私人订制",
+		"serviceList": [{
+			"imgURL": "img/people.81c659b4.png",
+			"title": "获取专业规划",
+			"text1": "尊享VIP专业导师",
+			"text2": "一对一职业规划"
+		}, {
+			"imgURL": "/images/people.png",
+			"title": "获取备考攻略",
+			"text1": "考核方式科学",
+			"text2": "一对一择校、面试策略"
+		}, {
+			"imgURL": "/images/people.png",
+			"title": "申请个人评估",
+			"text1": "尊享VIP备考专家",
+			"text2": "笔试复习评估与规划"
+		}, {
+			"imgURL": "/images/people.png",
+			"title": "即刻加入学习",
+			"text1": "尊享VIP私定基础提升",
+			"text2": "让您迅速进入备考状态"
+		}]
+	},
+	"curriculumObj": {
+		"titleName": "在职考研就来考研之窗",
+		"curriculumList": [{
+				"imgUrl": "/images/curriculum-item1.jpg",
+				"title": "笔试普通班",
+				"type": "院校：双非院校",
+				"text": "服务内容：报考指导 + 在线答疑 + 跟踪管理 + 信息更新 + 延保服务+模拟真题 +考试计划 + 报考指南 +随堂课件+重播视频了解详情",
+				"more": "了解更多"
+			},
+			{
+				"imgUrl": "/images/curriculum-item2.jpg",
+				"title": "笔面联报班",
+				"type": "院校：211高校",
+				"text": "服务内容：报考指导 + 在线答疑 + 跟踪管理 + 延保服务 + 模拟真题 +考试计划 + 报考指南 +随堂课件 + 重播视频+周末面授+面授材料+提面指导",
+				"more": "了解更多"
+			},
+			{
+				"imgUrl": "/images/curriculum-item3.jpg",
+				"title": "笔面保录班",
+				"type": "院校：985高校",
+				"text": "服务内容：报考指导 + 在线答疑 + 跟踪管理 + 模拟真题 + 报考指南 + 随堂课件 + 重播视频 + 周末面授 + 面试材料 + 提面指导",
+				"more": "了解更多"
+			}
+		]
+	},
+	"interviewObj": {
+		"titleName": "考研之窗提前面试课程内容",
+		"interviewList": [{
+				"imgUrl": "/images/interview1.png",
+				"imgActive": "/images/interviewActive1.png",
+				"description": "专业一对一综合素质评估"
+			},
+			{
+				"imgUrl": "/images/interview2.png",
+				"imgActive": "/images/interviewActive2.png",
+				"description": "针对不同院校解读申请材料"
+			},
+			{
+				"imgUrl": "/images/interview3.png",
+				"imgActive": "/images/interviewActive3.png",
+				"description": "实战案例面试能力强化提升"
+			},
+			{
+				"imgUrl": "/images/interview4.png",
+				"imgActive": "/images/interviewActive4.png",
+				"description": "全真模拟面试"
+			},
+			{
+				"imgUrl": "/images/interview5.png",
+				"imgActive": "/images/interviewActive5.png",
+				"description": "面试资料准备填写指导"
+			},
+			{
+				"imgUrl": "/images/interview6.png",
+				"imgActive": "/images/interviewActive6.png",
+				"description": "面试英语个面指导"
+			},
+			{
+				"imgUrl": "/images/interview7.png",
+				"imgActive": "/images/interviewActive7.png",
+				"description": "案例分析规律总结"
+			},
+			{
+				"imgUrl": "/images/interview8.png",
+				"imgActive": "/images/interviewActive8.png",
+				"description": "实战模拟个面组面"
+			},
+			{
+				"imgUrl": "/images/interview2.png",
+				"imgActive": "/images/interviewActive2.png",
+				"description": "更多"
+			}
+		]
+	},
+	"adventageObj": {
+		"titleName": "考研之窗——独家优势",
+		"adventageList": [{
+				"imgUrl": "/images/adventage1.png",
+				"imgActive": "/images/adventageActive1.png",
+				"view": "全名师阵容",
+				"text": "课程全部使用内部讲义配备专属联系、测试、模考题，历年真题等作为练习，使您事半功倍",
+				"other": ""
+			},
+			{
+				"imgUrl": "/images/adventage2.png",
+				"imgActive": "/images/adventageActive2.png",
+				"view": "高校优质资源",
+				"text": "课程全部使用内部讲义配备专属联系、测试、模考题，历年真题等作为练习，使您事半功倍",
+				"other": ""
+			},
+			{
+				"imgUrl": "/images/adventage3.png",
+				"imgActive": "/images/adventageActive3.png",
+				"view": "内部资料",
+				"text": "课程全部使用内部讲义配备专属联系、测试、模考题，历年真题等作为练习，使您事半功倍",
+				"other": ""
+			},
+			{
+				"imgUrl": "/images/adventage4.png",
+				"imgActive": "/images/adventageActive4.png",
+				"view": "专业教务管理",
+				"text": "课程全部使用内部讲义配备专属联系、测试、模考题，历年真题等作为练习，使您事半功倍",
+				"other": ""
+			},
+			{
+				"imgUrl": "/images/adventage5.png",
+				"imgActive": "/images/adventageActive5.png",
+				"view": "专业定向辅导",
+				"text": "课程全部使用内部讲义配备专属联系、测试、模考题，历年真题等作为练习，使您事半功倍",
+				"other": ""
+			}
+		]
+	},
+	"aboutObj": {
 		"topImg": "/images/about-top.gif",
 		"maxTitle": "公司介绍",
 		"aboutList": [{
@@ -273,8 +297,8 @@
 		}, {
 			"text": "考研之窗为学员提供360度管家式服务，实行班主任与助教全程跟踪“双师制”，首创考研翻转式课堂和行动学习法，从而快速有效的提高课堂学习效率。严谨规范至每一件事，细致服务于每一位学员是考研之窗全体老师的工作要求。"
 		}]
-  },
-  "professionalObj": {
+	},
+	"professionalObj": {
 		"topImg": "/images/perfessional-top.jpg",
 		"maxTitle": "在职硕士专业类别",
 		"professionalList": [{
@@ -314,8 +338,8 @@
 			"imgUrl": "/images/professional-item1.jpg",
 			"text": "工商管理硕士 (MBA)"
 		}]
-  },
-  "tutoringObj": {
+	},
+	"tutoringObj": {
 		"topImg": "/images/tutoring-top.jpg",
 		"maxTitle1": "2021联考“笔试辅导” 课程体系",
 		"maxTitle2": "我们用心对待每一位学员",
@@ -337,32 +361,8 @@
 			"description": "基础串讲",
 			"text": "3月－6月 从零起步，对各科知识点进行细化讲解，让学员对于考试的所有内容有一定的掌握，可达到国家线要求水平"
 		}]
-  },
-  "interviewObj": {
-		"topImg": "/images/perfessional-top.jpg",
-		"maxTitle": "政策瞬息万变，提升面试技巧刻不容缓",
-		"coachMore": "/images/tutoring-item5.jpg",
-		"interviewList": [{
-			"imgUrl": "/images/tutoring-item1.png",
-			"description": "不知道怎么考？",
-			"text": "您不知道MBA怎么考？考什么？许久未拿书本，缺乏学习技巧，效率低下，打击学习热情"
-		}, {
-			"imgUrl": "/images/tutoring-item2.png",
-			"description": "如何选择辅导班？",
-			"text": "您基础差，工作忙，想报辅导班？想了解相关院校，网上一查，都是无用信息，抓不到重点"
-		}, {
-			"imgUrl": "/images/tutoring-item3.png",
-			"description": "MBA提前面试技巧",
-			"text": "您准备提前面试，想零风险通过优秀？看看面试有多难，获得MBA面试技巧是考取MBA的关键一步"
-		}],
-		"interviewObj": "MBA提前面试的好处",
-		"meritList": [{
-			"text": "备考2021年MBA联考已开始启航， 东北各大MBA高校继续实行提前批面试政策（ 分批次进行）， 东北大学、 吉林大学、 大连理工大学、 东北财经大学等预面试新方案陆续推出， 考生提前面试成绩优秀便可获得东部线拟录取C线资格。 这意味着您预面试获得优秀C线， 联考只要达到一区线即可零风险录取东北大学、 吉林大学、 大连理工大学、 东北财经大学等MBA名校。 "
-		}, {
-			"text": "考研之窗与东北MBA高校深度合作，获悉面试流程、规则、细节和技巧，为您设计专业的面试课程，特邀优质名师，在短时间内，帮助您快速掌握预面试技巧，力求轻松获得优秀C线如愿迈入名校MBA殿堂。"
-		}]
-  },
-  "informationObj": {
+	},
+	"informationObj": {
 		"topImg": "/images/information-top.jpg",
 		"maxTitle": "新闻资讯",
 		"informationList": [{
@@ -396,8 +396,8 @@
 			"time": "2019-12-19",
 			"text": "您准备提前面试，想零风险通过优秀？看看面试有多难，获得MBA面试技巧。"
 		}]
-  },
-  "contactObj": {
+	},
+	"contactObj": {
 		"topImg": "/images/contact-top.jpg",
 		"maxTitle": "联系我们",
 		"contactList": [{

@@ -83,7 +83,7 @@
     </div>
   </div>
   <div class="problem common-module">
-    <common-title titleName="在职考研人，你是否面临以下问题？" :imgSrc="require('@/assets/problem-tit.png')"></common-title>
+    <common-title :titleName="problemObj.titleName" :imgSrc="require('@/assets/problem-tit.png')"></common-title>
     <div class="max-content">
       <div class="wrap flex-between">
         <div class="pic">
@@ -96,10 +96,10 @@
     </div>
   </div>
   <div class="curriculum common-module">
-    <common-title :titleCol="titleWhite" titleName="在职考研就来考研之窗" :imgSrc="require('@/assets/curriculum-tit.png')"></common-title>
+    <common-title :titleCol="titleWhite" :titleName="curriculumObj.titleName" :imgSrc="require('@/assets/curriculum-tit.png')"></common-title>
     <div class="max-content">
       <div class="wrap flex-between">
-        <div class="item" v-for="(item,i) in curriculumList" :key="i" @click="goSession">
+        <div class="item" v-for="(item,i) in curriculumObj.curriculumList" :key="i" @click="goSession">
           <div class="box">
             <div class="pic">
               <img :src="item.imgUrl" alt="">
@@ -129,10 +129,10 @@
     </div>
   </div>
   <div class="interview common-module">
-    <common-title :titleCol="titleWhite" titleName="考研之窗提前面试课程内容" :imgSrc="require('@/assets/intervice-tit.png')"></common-title>
+    <common-title :titleCol="titleWhite" :titleName="interviewObj.titleName" :imgSrc="require('@/assets/intervice-tit.png')"></common-title>
     <div class="max-content">
       <div class="wrap flex-center">
-        <div class="item" v-for="(item,i) in interviewList" :key="i" @click="goSession">
+        <div class="item" v-for="(item,i) in interviewObj.interviewList" :key="i" @click="goSession">
           <div class="pic pic1">
             <img :src="item.imgUrl" alt="" class="img1">
 
@@ -209,44 +209,18 @@ export default {
 
       problemObj: {},
 
-      curriculumList: [],
+      curriculumObj: {},
 
-      serviceObj: {
-        titleName: '专业的服务体系，享受私人订制',
-        serviceList: [{
-            imgURL: require('@/assets/people.png'),
-            title: '获取专业规划',
-            text1: '尊享VIP专业导师',
-            text2: '一对一职业规划'
-          },
-          {
-            imgURL: '/images/people.png',
-            title: '获取备考攻略',
-            text1: '考核方式科学',
-            text2: '一对一择校、面试策略'
-          },
-          {
-            imgURL: '/images/people.png',
-            title: '申请个人评估',
-            text1: '尊享VIP备考专家',
-            text2: '笔试复习评估与规划'
-          },
-          {
-            imgURL: '/images/people.png',
-            title: '即刻加入学习',
-            text1: '尊享VIP私定基础提升',
-            text2: '让您迅速进入备考状态'
-          }
-        ]
-      },
+      serviceObj: {},
 
-      interviewList: [],
+      interviewObj: {},
 
       adventageObj: {}
     }
   },
   created() {},
   mounted() {
+    console.log(JSON.stringify(this._data.serviceObj));
     this.init();
     var swiper = new Swiper('.swiper-container', {
       // slidesPerView: 1,
@@ -269,7 +243,7 @@ export default {
   },
   methods: {
     init() {
-      // this.bannerList = data.bannerList;
+      this.bannerList = data.bannerList;
       this.introduceObj = data.introduceObj;
       this.consultObj = data.consultObj;
       this.flowObject = data.flowObject;
@@ -278,6 +252,9 @@ export default {
       this.curriculumList = data.curriculumList;
       this.interviewList = data.interviewList;
       this.adventageObj = data.adventageObj;
+      this.serviceObj = data.serviceObj;
+      this.curriculumObj = data.curriculumObj;
+      this.interviewObj = data.interviewObj;
     },
     interview() {
       this.init = setInterval(() => {
@@ -665,7 +642,7 @@ export default {
 @media screen and(max-width: 600px) {}
 
 .select-major {
-  height: 750px;
+  height: 660px;
   background: url('~@/assets/bg-4.png') no-repeat;
   background-size: 100% 100%;
   padding: 60px 0 0;
