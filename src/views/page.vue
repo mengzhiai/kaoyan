@@ -1,203 +1,322 @@
 <template>
-<div>
-  <div class="swiper-container" ref="slider">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide" v-for="(item,i) in bannerList" :key="i" @click="goSession">
-        <img :src="item.imgURL" alt="">
+  <div>
+    <div class="swiper-container" ref="slider">
+      <div class="swiper-wrapper">
+        <div
+          class="swiper-slide"
+          v-for="(item, i) in bannerList"
+          :key="i"
+          @click="goSession"
+        >
+          <img :src="item.imgURL" alt="" />
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <div class="introduce common-module">
+      <div class="max-content">
+        <common-title
+          :titleName="introduceObj.titleName"
+          :imgSrc="require('@/assets/take-tit.png')"
+        ></common-title>
+        <div class="introduce-wrap flex-center">
+          <div
+            class="item"
+            v-for="(item, i) in introduceObj.introduceList"
+            :key="i"
+            @click="goSession"
+          >
+            <div>
+              <div class="pic pic1">
+                <img :src="item.imgSrc" />
+              </div>
+              <div class="pic pic2">
+                <img :src="item.imgSrcActive" />
+              </div>
+            </div>
+            <div class="txt">
+              {{ item.name }}
+            </div>
+            <div class="box">
+              {{ item.txt }}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="swiper-pagination"></div>
-  </div>
-  <div class="introduce common-module">
-    <div class="max-content">
-      <common-title :titleName="introduceObj.titleName" :imgSrc="require('@/assets/take-tit.png')"></common-title>
-      <div class="introduce-wrap flex-center">
-        <div class="item" v-for="(item,i) in introduceObj.introduceList" :key="i" @click="goSession">
-          <div>
+    <div class="consult common-module">
+      <common-title
+        :titleCol="titleWhite"
+        :titleName="consultObj.titleName"
+        :imgSrc="require('@/assets/consult-tit.png')"
+      ></common-title>
+      <div class="max-content">
+        <div class="wrap flex-center">
+          <div
+            class="item"
+            v-for="(item, i) in consultObj.consultList"
+            :key="i"
+            @click="goSession"
+          >
+            <div class="pic">
+              <img :src="item.imgSrc" alt="" />
+            </div>
+            <div class="txt">{{ item.txt }}</div>
+            <div class="more" @click.stop="goSession">{{ item.more }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-two">
+      <div class="two-content">
+        <div class="two-content-title"></div>
+        <common-title
+          :titleName="programObj.titleName"
+          :imgSrc="require('@/assets/two-content-text.png')"
+        ></common-title>
+        <div class="two-content-img2 clearfloat">
+          <div class="two-content-img2-left">
+            <ul class="labels clearfloat">
+              <li @click="goSession()">提前面试</li>
+              <li @click="goSession()">网上报名</li>
+              <li @click="goSession()">现场确认</li>
+              <li @click="goSession()">笔试考试</li>
+              <li @click="goSession()">院校复试</li>
+            </ul>
+            <ul class="lines clearfloat">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li class="noneRight"></li>
+            </ul>
+            <ul class="btns clearfloat">
+              <li @click="goSession()">2020年3 - 10月</li>
+              <li @click="goSession()">2020年10月开始</li>
+              <li @click="goSession()">2020年11月开始</li>
+              <li @click="goSession()">2020年12月考试</li>
+              <li @click="goSession()" class="noneRight">2021年3 - 4月</li>
+            </ul>
+          </div>
+          <div class="two-content-img2-right">
+            <div class="studio" @click="goLink()">
+              <div class="studio-inner">
+                <p class="p1">录取入学</p>
+                <p class="p2">2021年4-10月</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flow common-module" v-if="false">
+      <common-title
+        titleName="2020年在职硕士报考流程"
+        :imgSrc="require('@/assets/flow-tit.png')"
+      ></common-title>
+      <div class="max-content flex-baseline">
+        <div class="wrap">
+          <div class="step flex">
+            <div class="item" v-for="(item, i) in flowObject.stepList" :key="i">
+              {{ item }}
+            </div>
+          </div>
+          <div class="line flex">
+            <div
+              class="item"
+              v-for="(item, i) in flowObject.stepList.length"
+              :key="i"
+            ></div>
+          </div>
+
+          <div class="date flex">
+            <div class="item" v-for="(item, i) in flowObject.dateList" :key="i">
+              {{ item }}
+            </div>
+          </div>
+        </div>
+        <div class="import"></div>
+      </div>
+    </div>
+    <div class="select-major common-module">
+      <common-title
+        :titleCol="titleWhite"
+        :titleName="majorObj.titleName"
+        :imgSrc="require('@/assets/major-tit.png')"
+      ></common-title>
+      <div class="max-content">
+        <div class="wrap">
+          <div class="item" v-for="(item, i) in majorObj.majorList" :key="i">
+            <div class="school max">{{ item.school }}</div>
+            <div class="min"><img src="@/assets/arrow.png" alt="" /></div>
+            <div class="specialty max">{{ item.specialty1 }}</div>
+            <div class="min"><img src="@/assets/arrow.png" alt="" /></div>
+            <div class="specialty max">{{ item.specialty2 }}</div>
+            <div class="min"><img src="@/assets/arrow.png" alt="" /></div>
+            <div class="more max pointer" @click="goSession">
+              {{ item.more }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="problem common-module">
+      <common-title
+        :titleName="problemObj.titleName"
+        :imgSrc="require('@/assets/problem-tit.png')"
+      ></common-title>
+      <div class="max-content">
+        <div class="wrap flex-between">
+          <div class="pic">
+            <img :src="problemObj.imgUrl" alt="" />
+          </div>
+          <div class="content">
+            <div
+              class="item"
+              v-for="(item, i) in problemObj.problemList"
+              :key="i"
+              @click="goSession"
+            >
+              {{ item }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="curriculum common-module">
+      <common-title
+        :titleCol="titleWhite"
+        :titleName="curriculumObj.titleName"
+        :imgSrc="require('@/assets/curriculum-tit.png')"
+      ></common-title>
+      <div class="max-content">
+        <div class="wrap flex-between">
+          <div
+            class="item"
+            v-for="(item, i) in curriculumObj.curriculumList"
+            :key="i"
+            @click="goSession"
+          >
+            <div class="box">
+              <div class="pic">
+                <img :src="item.imgUrl" alt="" />
+              </div>
+              <div class="title">{{ item.title }}</div>
+              <div class="type">{{ item.type }}</div>
+              <div class="text overflow">{{ item.text }}</div>
+              <div class="more" @click.stop="goSession">{{ item.more }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="service common-module">
+      <common-title
+        :titleName="serviceObj.titleName"
+        :imgSrc="require('@/assets/service-tit.png')"
+      ></common-title>
+      <div class="max-content">
+        <div class="wrap flex-between">
+          <div
+            class="item"
+            v-for="(item, i) in serviceObj.serviceList"
+            :key="i"
+            @click="goSession"
+          >
+            <div class="pic"><img src="@/assets/people.png" alt="" /></div>
+            <div class="tit">{{ item.title }}</div>
+            <div class="text">
+              <div>{{ item.text1 }}</div>
+              <div>{{ item.text2 }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="interview common-module">
+      <common-title
+        :titleCol="titleWhite"
+        :titleName="interviewObj.titleName"
+        :imgSrc="require('@/assets/intervice-tit.png')"
+      ></common-title>
+      <div class="max-content">
+        <div class="wrap flex-center">
+          <div
+            class="item"
+            v-for="(item, i) in interviewObj.interviewList"
+            :key="i"
+            @click="goSession"
+          >
             <div class="pic pic1">
-              <img :src="item.imgSrc" />
+              <img :src="item.imgUrl" alt="" class="img1" />
             </div>
             <div class="pic pic2">
-              <img :src="item.imgSrcActive" />
+              <img :src="item.imgActive" alt="" class="img2" />
             </div>
-          </div>
-          <div class="txt">
-            {{item.name}}
-          </div>
-          <div class="box">
-            {{item.txt}}
+            <div class="description">{{ item.description }}</div>
           </div>
         </div>
+        <div class="more" @click="goSession">查看更多</div>
       </div>
     </div>
-  </div>
-  <div class="consult common-module">
-    <common-title :titleCol="titleWhite" :titleName="consultObj.titleName" :imgSrc="require('@/assets/consult-tit.png')"></common-title>
-    <div class="max-content">
-      <div class="wrap flex-center">
-        <div class="item" v-for="(item,i) in consultObj.consultList" :key="i" @click="goSession">
-          <div class="pic">
-            <img :src="item.imgSrc" alt="">
-          </div>
-          <div class="txt">{{item.txt}}</div>
-          <div class="more" @click.stop="goSession">{{item.more}}</div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-  <div class="flow common-module" v-if="false">
-    <common-title titleName="2020年在职硕士报考流程" :imgSrc="require('@/assets/flow-tit.png')"></common-title>
-    <div class="max-content flex-baseline">
-      <div class="wrap">
-        <div class="step flex">
-          <div class="item" v-for="(item,i) in flowObject.stepList" :key="i">{{item}}</div>
-        </div>
-        <div class="line flex">
-          <div class="item" v-for="(item, i) in flowObject.stepList.length" :key="i"></div>
-        </div>
-
-        <div class="date flex">
-          <div class="item" v-for="(item, i) in flowObject.dateList" :key="i">{{item}}</div>
-        </div>
-      </div>
-      <div class="import">
-      </div>
-    </div>
-
-  </div>
-  <div class="select-major common-module">
-    <common-title :titleCol="titleWhite" :titleName="majorObj.titleName" :imgSrc="require('@/assets/major-tit.png')"></common-title>
-    <div class="max-content">
-      <div class="wrap">
-        <div class="item" v-for="(item,i) in majorObj.majorList" :key="i">
-          <div class="school max">{{item.school}}</div>
-          <div class="min"><img src="@/assets/arrow.png" alt=""></div>
-          <div class="specialty max">{{item.specialty1}}</div>
-          <div class="min"><img src="@/assets/arrow.png" alt=""></div>
-          <div class="specialty max">{{item.specialty2}}</div>
-          <div class="min"><img src="@/assets/arrow.png" alt=""></div>
-          <div class="more max pointer" @click="goSession">{{item.more}}</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="problem common-module">
-    <common-title :titleName="problemObj.titleName" :imgSrc="require('@/assets/problem-tit.png')"></common-title>
-    <div class="max-content">
-      <div class="wrap flex-between">
-        <div class="pic">
-          <img :src="problemObj.imgUrl" alt="">
-        </div>
-        <div class="content">
-          <div class="item" v-for="(item,i) in problemObj.problemList" :key="i" @click="goSession">{{item}}</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="curriculum common-module">
-    <common-title :titleCol="titleWhite" :titleName="curriculumObj.titleName" :imgSrc="require('@/assets/curriculum-tit.png')"></common-title>
-    <div class="max-content">
-      <div class="wrap flex-between">
-        <div class="item" v-for="(item,i) in curriculumObj.curriculumList" :key="i" @click="goSession">
-          <div class="box">
-            <div class="pic">
-              <img :src="item.imgUrl" alt="">
+    <div class="adventage common-module">
+      <common-title
+        :titleName="adventageObj.titleName"
+        :imgSrc="require('@/assets/adventage-tit.jpg')"
+      ></common-title>
+      <div class="max-content">
+        <div class="wrap flex">
+          <div
+            class="item"
+            v-for="(item, i) in adventageObj.adventageList"
+            :key="i"
+            @click="goSession"
+          >
+            <div class="pic pic1">
+              <img :src="item.imgUrl" alt="" />
             </div>
-            <div class="title">{{item.title}}</div>
-            <div class="type">{{item.type}}</div>
-            <div class="text overflow">{{item.text}}</div>
-            <div class="more" @click.stop="goSession">{{item.more}}</div>
+            <div class="pic pic2">
+              <img :src="item.imgActive" alt="" />
+            </div>
+            <div class="view">{{ item.view }}</div>
+            <div class="text">{{ item.text }}</div>
+            <div class="other">{{ item.other }}</div>
           </div>
         </div>
+        <div class="more" @click="goSession">查看更多</div>
       </div>
     </div>
   </div>
-  <div class="service common-module">
-    <common-title :titleName="serviceObj.titleName" :imgSrc="require('@/assets/service-tit.png')"></common-title>
-    <div class="max-content">
-      <div class="wrap flex-between">
-        <div class="item" v-for="(item,i) in serviceObj.serviceList" :key="i" @click="goSession">
-          <div class="pic"><img src="@/assets/people.png" alt=""></div>
-          <div class="tit">{{item.title}}</div>
-          <div class="text">
-            <div>{{item.text1}}</div>
-            <div>{{item.text2}}</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="interview common-module">
-    <common-title :titleCol="titleWhite" :titleName="interviewObj.titleName" :imgSrc="require('@/assets/intervice-tit.png')"></common-title>
-    <div class="max-content">
-      <div class="wrap flex-center">
-        <div class="item" v-for="(item,i) in interviewObj.interviewList" :key="i" @click="goSession">
-          <div class="pic pic1">
-            <img :src="item.imgUrl" alt="" class="img1">
-
-          </div>
-          <div class="pic pic2">
-            <img :src="item.imgActive" alt="" class="img2">
-          </div>
-          <div class="description">{{item.description}}</div>
-        </div>
-      </div>
-      <div class="more" @click="goSession">查看更多</div>
-    </div>
-  </div>
-  <div class="adventage common-module">
-    <common-title :titleName="adventageObj.titleName" :imgSrc="require('@/assets/adventage-tit.jpg')"></common-title>
-    <div class="max-content">
-      <div class="wrap flex">
-        <div class="item" v-for="(item,i) in adventageObj.adventageList" :key="i" @click="goSession">
-          <div class="pic pic1">
-            <img :src="item.imgUrl" alt="">
-          </div>
-          <div class="pic pic2">
-            <img :src="item.imgActive" alt="">
-          </div>
-          <div class="view">{{item.view}}</div>
-          <div class="text">{{item.text}}</div>
-          <div class="other">{{item.other}}</div>
-        </div>
-      </div>
-      <div class="more" @click="goSession">查看更多</div>
-    </div>
-  </div>
-</div>
 </template>
 
 <script>
-import {
-  commonLink,
-  blank
-} from '../until/common'
-import Swiper from 'swiper';
-import commonTitle from '@/components/CommonTitle.vue'
-import data from '@/data.json'
+import { commonLink, blank } from "../until/common";
+import Swiper from "swiper";
+import commonTitle from "@/components/CommonTitle.vue";
+import data from "@/data.json";
 export default {
   components: {
-    commonTitle
+    commonTitle,
   },
   data() {
     return {
-      bannerList: [{
-          "imgURL": "/images/banner-new1.jpg",
-          "id": 1
+      bannerList: [
+        {
+          imgURL: "/images/banner-new1.jpg",
+          id: 1,
         },
         {
-          "imgURL": "/images/banner-new2.png",
-          "id": 2
+          imgURL: "/images/banner-new2.png",
+          id: 2,
         },
         {
-          "imgURL": "/images/banner-new3.jpg",
-          "id": 3
-        }
+          imgURL: "/images/banner-new3.jpg",
+          id: 3,
+        },
       ],
       introduceObj: {},
       active: true,
-      titleWhite: 'title-white',
+      titleWhite: "title-white",
 
       //报名咨询
       consultObj: {},
@@ -215,14 +334,15 @@ export default {
 
       interviewObj: {},
 
-      adventageObj: {}
-    }
+      adventageObj: {},
+      programObj: {},
+    };
   },
   created() {},
   mounted() {
     console.log(JSON.stringify(this._data.serviceObj));
     this.init();
-    var swiper = new Swiper('.swiper-container', {
+    var swiper = new Swiper(".swiper-container", {
       // slidesPerView: 1,
       // freeMode: true,
       // loop: true,
@@ -234,7 +354,7 @@ export default {
       lazyLoadingInPrevNext: true,
       lazyLoadingInPrevNextAmount: 1,
       pagination: {
-        el: '.swiper-pagination',
+        el: ".swiper-pagination",
         clickable: true,
       },
       paginationClickable: true,
@@ -255,32 +375,33 @@ export default {
       this.serviceObj = data.serviceObj;
       this.curriculumObj = data.curriculumObj;
       this.interviewObj = data.interviewObj;
+      this.programObj = data.programObj;
     },
     interview() {
       this.init = setInterval(() => {
         this.light = this.light + 1;
         if (this.light > 3) {
-          this.light = 1
+          this.light = 1;
         }
       }, 3000);
     },
     goLink() {
       //window.open("http://www.kaoyanzhichuang.com/", '_blank')
       let doms = document.getElementById("nb_icon_wrap");
-      const event = new Event('click');
+      const event = new Event("click");
       if (doms) {
         doms.dispatchEvent(event);
       }
     },
     goSession() {
-      window.open(commonLink, "framename")
-    }
-  }
-}
+      window.open(commonLink, "framename");
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-@import '../styles/swiper.css';
+@import "../styles/swiper.css";
 
 .swiper-container {
   .swiper-slide {
@@ -303,7 +424,6 @@ export default {
 
 @media screen and (max-width: 600px) {
   .swiper-container {
-
     img {
       max-height: 200px;
     }
@@ -452,7 +572,7 @@ export default {
   padding: 80px 0;
   width: 100%;
   // height: 600px;
-  background: url('~@/assets/common-bac.png') no-repeat;
+  background: url("~@/assets/common-bac.png") no-repeat;
   background-size: 100% 500px;
 
   .wrap {
@@ -492,7 +612,6 @@ export default {
 
         &:hover {
           background-color: #0b67a5;
-
         }
       }
     }
@@ -607,7 +726,7 @@ export default {
       font-size: 24px;
       color: #666;
       cursor: pointer;
-      background: url('~@/assets/label.png') no-repeat 100% 100%;
+      background: url("~@/assets/label.png") no-repeat 100% 100%;
     }
   }
 
@@ -618,8 +737,7 @@ export default {
       width: 158px;
       height: 118px;
       margin-right: 67px;
-      background: url('~@/assets/lines.png') no-repeat 100% 100%;
-
+      background: url("~@/assets/lines.png") no-repeat 100% 100%;
     }
   }
 
@@ -639,11 +757,12 @@ export default {
   }
 }
 
-@media screen and(max-width: 600px) {}
+@media screen and(max-width: 600px) {
+}
 
 .select-major {
   height: 660px;
-  background: url('~@/assets/bg-4.png') no-repeat;
+  background: url("~@/assets/bg-4.png") no-repeat;
   background-size: 100% 100%;
   padding: 60px 0 0;
 
@@ -653,7 +772,7 @@ export default {
     .item {
       display: flex;
 
-      >div {
+      > div {
         text-align: center;
         font-size: 24px;
         color: #333;
@@ -695,7 +814,7 @@ export default {
       margin: 20px 0 10px;
 
       .item {
-        >div {
+        > div {
           font-size: 20px;
 
           img {
@@ -717,7 +836,7 @@ export default {
       margin: 10px 0 0;
 
       .item {
-        >div {
+        > div {
           font-size: 16px;
           height: 30px;
           line-height: 30px;
@@ -731,7 +850,7 @@ export default {
   .select-major {
     .wrap {
       .item {
-        >div {
+        > div {
           font-size: 14px;
           margin: 1px;
           line-height: 34px;
@@ -780,17 +899,17 @@ export default {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        background: url('~@/assets/problem-bg.png') no-repeat 100% 100%;
+        background: url("~@/assets/problem-bg.png") no-repeat 100% 100%;
 
         &:hover {
           color: #fff;
-          background: url('~@/assets/problem-bg-active.png') no-repeat 100% 100%;
+          background: url("~@/assets/problem-bg-active.png") no-repeat 100% 100%;
         }
       }
 
       .item:nth-child(2n) {
         color: #fff;
-        background: url('~@/assets/problem-bg-active.png') no-repeat 100% 100%;
+        background: url("~@/assets/problem-bg-active.png") no-repeat 100% 100%;
       }
     }
   }
@@ -835,7 +954,7 @@ export default {
 
           &:hover {
             color: #fff;
-            background: url('~@/assets/problem-bg-active.png') no-repeat;
+            background: url("~@/assets/problem-bg-active.png") no-repeat;
             background-size: 100% 100%;
           }
         }
@@ -860,7 +979,7 @@ export default {
 
 .curriculum {
   height: 760px;
-  background: url('~@/assets/curriculum-bg.png') no-repeat;
+  background: url("~@/assets/curriculum-bg.png") no-repeat;
   background-size: 100% 100%;
   padding: 50px 0 0;
 
@@ -876,7 +995,7 @@ export default {
       overflow: hidden;
 
       .box {
-        transition: all .3s;
+        transition: all 0.3s;
 
         &:hover {
           transform: scale(1.03, 1.03);
@@ -909,7 +1028,7 @@ export default {
         width: 173px;
         height: 33px;
         margin: 15px auto;
-        background: #378FD0;
+        background: #378fd0;
         color: #fff;
         text-align: center;
         line-height: 33px;
@@ -918,7 +1037,7 @@ export default {
         cursor: pointer;
 
         &:hover {
-          background-color: #2768B6;
+          background-color: #2768b6;
         }
       }
     }
@@ -1013,7 +1132,7 @@ export default {
       text-align: center;
       border: 1px solid #ccc;
       cursor: pointer;
-      transition: all .2s linear;
+      transition: all 0.2s linear;
 
       &:hover {
         // color: #fff;
@@ -1034,7 +1153,7 @@ export default {
       .text {
         font-size: 26px;
 
-        >div {
+        > div {
           margin: 15px 0;
         }
       }
@@ -1106,7 +1225,7 @@ export default {
         .text {
           font-size: 14px;
 
-          >div {
+          > div {
             margin: 10px 0;
           }
         }
@@ -1139,7 +1258,7 @@ export default {
 
     &:hover {
       color: #fff;
-      background-color: #2768B6;
+      background-color: #2768b6;
 
       .pic1 {
         display: none;
@@ -1248,7 +1367,6 @@ export default {
     .item:nth-last-child(1) {
       display: block;
     }
-
   }
 }
 
@@ -1426,7 +1544,7 @@ export default {
         }
       }
     }
-    .item:nth-last-child(1){
+    .item:nth-last-child(1) {
       display: none;
     }
 
@@ -1477,8 +1595,213 @@ export default {
       height: 30px;
       line-height: 30px;
       font-size: 16px;
-
     }
+  }
+}
+
+.main-two {
+  width: 100%;
+  // height: 1304px;
+  position: relative;
+
+  .two-title {
+    width: 100%;
+    height: 482px;
+    background: url("~@/assets/two-bg.png") no-repeat 100% 100%;
+
+    .two-title-text {
+      padding-top: 65px;
+      font-size: 36px;
+      color: #fff;
+      text-align: center;
+      font-weight: bold;
+      letter-spacing: 3px;
+    }
+
+    .two-img {
+      width: 100%;
+      text-align: center;
+      margin-top: 38px;
+
+      img {
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .two-content {
+    width: 100%;
+    height: 560px;
+
+    .two-content-title {
+      font-size: 36px;
+      text-align: center;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .two-content-img {
+      width: 100%;
+      text-align: center;
+      margin-top: 20px;
+
+      img {
+        margin: 0 auto;
+      }
+    }
+
+    .two-content-img2 {
+      width: 1366px;
+      text-align: center;
+      margin: 40px auto;
+
+      .two-content-img2-right {
+        cursor: pointer;
+        width: 220px;
+        height: 220px;
+        margin-left: 10px;
+        background: #e8f2fe;
+        border-radius: 50%;
+        overflow: hidden;
+        float: left;
+        text-align: center;
+
+        .studio-inner {
+          text-align: center;
+          width: 186px;
+          height: 186px;
+          overflow: hidden;
+          background: #8dbdfc;
+          border-radius: 50%;
+          margin: 0 auto;
+          margin-top: 17px;
+
+          .p1 {
+            font-size: 30px;
+            color: #fff;
+            margin-top: 70px;
+          }
+
+          .p2 {
+            font-size: 12px;
+            color: #000;
+            margin-top: 2px;
+            font-weight: bold;
+          }
+        }
+      }
+
+      .two-content-img2-left {
+        width: 1107px;
+        padding-top: 34px;
+        float: left;
+
+        .labels {
+          width: 100%;
+          margin-left: 78px;
+
+          li {
+            width: 230px;
+            height: 58px;
+            line-height: 58px;
+            background: url("~@/assets/label.png") no-repeat 100% 100%;
+            text-align: center;
+            float: left;
+            margin-left: -25px;
+            font-size: 24px;
+            color: #666;
+            cursor: pointer;
+
+            &:hover {
+              font-weight: bold;
+            }
+          }
+        }
+
+        .lines {
+          margin-left: 87px;
+          margin-top: 25px;
+
+          li {
+            width: 158px;
+            height: 118px;
+            background: url("~@/assets/lines.png") no-repeat 100% 100%;
+            float: left;
+            margin-right: 39px;
+          }
+        }
+
+        .btns {
+          li {
+            width: 172px;
+            height: 57px;
+            line-height: 57px;
+            font-size: 18px;
+            box-sizing: border-box;
+            float: left;
+            border: 1px solid #0877c2;
+            color: #0877c2;
+            margin-right: 30px;
+            cursor: pointer;
+
+            &:hover {
+              background: #0877c2;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+
+    .two-content-absolute {
+      top: 238px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      position: absolute;
+      width: 83.3%;
+      height: 375px;
+      background: #fff;
+      box-shadow: 2px 10px 1px rgba(73, 18, 19, 0.1);
+
+      .two-content-absolute-ul {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        justify-items: center;
+        align-items: center;
+
+        & > li {
+          width: 100%;
+          flex: 1;
+          text-align: center;
+
+          & > p {
+            color: #666;
+            font-size: 30px;
+            font-weight: bold;
+            margin: 33px 0 68px 0;
+          }
+
+          .two-content-absolute-btn {
+            background: #0877c2;
+            border-radius: 5px;
+            font-size: 24px;
+            color: #fff;
+            width: 72%;
+            margin: 0 auto;
+            padding: 5px 0 8px 0;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px){
+  .main-two{
+    display: none;
   }
 }
 </style>

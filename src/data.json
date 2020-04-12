@@ -84,6 +84,9 @@
 			}
 		]
 	},
+	"programObj": {
+		"titleName": "2020年在职硕士报考流程"
+	},
 	"flowObject": {
 		"stepList": ["提前面试", "网上报名", "现场确认", "笔试考试", "院校复试"],
 		"dateList": [
@@ -397,6 +400,36 @@
 			"text": "您准备提前面试，想零风险通过优秀？看看面试有多难，获得MBA面试技巧。"
 		}]
 	},
+	"aheadInterviewObj": {
+		"topImg": "/images/perfessional-top.jpg",
+		"maxTitle": "政策瞬息万变，提升面试技巧刻不容缓",
+		"interviewList": [
+			{
+				"description": "不知道怎么考？",
+				"imgUrl": "/images/interview-list-1.jpg",
+				"text": "您不知道MBA怎么考？考什么？许久未拿书本，缺乏学习技巧，效率低下，打击学习热情"
+			},
+			{
+				"description": "如何选择辅导班？",
+				"imgUrl": "/images/interview-list-2.jpg",
+				"text": "您基础差，工作忙，想报辅导班？想了解相关院校，网上一查，都是无用信息，抓不到重点"
+			},
+			{
+				"description": "MBA提前面试技巧",
+				"imgUrl": "/images/interview-list-3.jpg",
+				"text": "您准备提前面试，想零风险通过优秀？看看面试有多难，获得MBA面试技巧是考取MBA的关键一步"
+			}
+		],
+		"meritTitle": "MBA提前面试的好处",
+		"meritList": [
+			{
+				"text": "备考2021年MBA联考已开始启航，东北各大MBA高校继续实行提前批面试政策（分批次进行），东北大学、吉林大学、大连理工大学、东北财经大学等预面试新方案陆续推出，考生提前面试成绩优秀便可获得东部线拟录取C线资格。这意味着您预面试获得优秀C线，联考只要达到一区线即可零风险录取东北大学、吉林大学、大连理工大学、东北财经大学等MBA名校。"
+			},
+			{
+				"text": "考研之窗与东北MBA高校深度合作，获悉面试流程、规则、细节和技巧，为您设计专业的面试课程，特邀优质名师，在短时间内，帮助您快速掌握预面试技巧，力求轻松获得优秀C线如愿迈入名校MBA殿堂。"
+			}
+		]
+	},
 	"contactObj": {
 		"topImg": "/images/contact-top.jpg",
 		"maxTitle": "联系我们",
@@ -425,5 +458,9 @@
 			"address": "沈阳市和平区三好街24号辽 宁省科技厅5楼",
 			"tel": "159-4014-5156"
 		}
+	},
+	"footerObj": {
+		"qrCode": "/images/qr-code.jpg",
+		"tel": "400-969-0363"
 	}
 }
