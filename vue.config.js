@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2020-03-31 11:20:25
+ * @LastEditTime: 2020-03-31 11:24:26
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \kaoyan\vue.config.js
+ */
 const path = require("path");
 // var data = require('./public/data.json')
 function resolve(dir) {
@@ -24,6 +32,7 @@ module.exports = {
         // },
         open: false,
         host: '192.168.18.12',
+        host: 'localhost',
         port: 8080,
         https: false,
         hotOnly: false,
