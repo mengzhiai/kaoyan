@@ -1,72 +1,80 @@
 <template>
-<div class="interview page-module">
-  <div class="top-img">
-    <img :src="interviewObj.topImg" alt="">
-  </div>
-  <div class="max-content">
-    <div class="wrap flex-between">
-      <div class="side">
-        <side-menu sideChinese="提前面试" sideEnglish="Advance interview"></side-menu>
-      </div>
-      <div class="content">
-        <div class="content-title">
-          <div class="title">{{interviewObj.maxTitle}}</div>
-          <div class="line"></div>
+  <div class="interview page-module">
+    <div class="top-img">
+      <img :src="aheadInterviewObj.topImg" alt="" />
+    </div>
+    <div class="max-content">
+      <div class="wrap flex-between">
+        <div class="side">
+          <side-menu
+            sideChinese="提前面试"
+            sideEnglish="Advance interview"
+          ></side-menu>
         </div>
-        <div class="detail flex-between">
-          <div class="item" v-for="(item,i) in interviewObj.interviewList" :key="i">
-            <div class="des">{{item.description}}</div>
-            <div class="pic">
-              <img :src="item.imgUrl" alt="">
+        <div class="content">
+          <div class="content-title">
+            <div class="title">{{ aheadInterviewObj.maxTitle }}</div>
+            <div class="line"></div>
+          </div>
+          <div class="detail flex-between">
+            <div
+              class="item"
+              v-for="(item, i) in aheadInterviewObj.interviewList"
+              :key="i"
+            >
+              <div class="des">{{ item.description }}</div>
+              <div class="pic">
+                <img :src="item.imgUrl" alt="" />
+              </div>
+              <div class="text overflow">{{ item.text }}</div>
+              <div class="btn" @click="goNewWeb">了解详情</div>
             </div>
-            <div class="text overflow">{{item.text}}</div>
-            <div class="btn" @click="goNewWeb">了解详情</div>
           </div>
-        </div>
-        <div class="detail2">
-          <div class="pic">
-            <img src="@/assets/interview-pic1.jpg" alt="">
-          </div>
-          <div class="merit">
-            <div class="merit-title">{{interviewObj.meritTitle}}</div>
-            <p v-for="(item,i) in interviewObj.meritList" :key="i">{{item.text}}</p>
+          <div class="detail2">
+            <div class="pic">
+              <img src="@/assets/interview-pic1.jpg" alt="" />
+            </div>
+            <div class="merit">
+              <div class="merit-title">{{ aheadInterviewObj.meritTitle }}</div>
+              <p v-for="(item, i) in aheadInterviewObj.meritList" :key="i">
+                {{ item.text }}
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </template>
 
 <script>
-import sideMenu from '@/components/SideMenu.vue'
-import data from '@/data.json'
+import sideMenu from "@/components/SideMenu.vue";
+import data from "@/data.json";
 export default {
   components: {
-    sideMenu
+    sideMenu,
   },
   data() {
     return {
-      interviewObj: {
-        topImg: '',
-        maxTitle: '',
-        interviewList:[]
-
-      }
-    }
+      aheadInterviewObj: {
+        topImg: "",
+        maxTitle: "",
+        interviewList: [],
+      },
+    };
   },
   mounted() {
     this.init();
   },
-  methods:{
-    init(){
-      this.interviewObj = data.interviewObj;
+  methods: {
+    init() {
+      this.aheadInterviewObj = data.aheadInterviewObj;
     },
-    goNewWeb(){
-      window.open('http://www.kaoyanzhichuang.com/',"_blank")
-    }
-  }
-}
+    goNewWeb() {
+      window.open("http://www.kaoyanzhichuang.com/", "_blank");
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -80,7 +88,7 @@ export default {
       margin-bottom: 60px;
       border: 1px solid #ccc;
       padding: 30px 0;
-      transition: all .2s linear;
+      transition: all 0.2s linear;
 
       &:hover {
         box-shadow: 0 0 10px 1px #ddd;
@@ -125,47 +133,63 @@ export default {
     margin: 20px 0;
     text-indent: 30px;
     line-height: 30px;
+    .merit-title {
+      font-size: 30px;
+      margin: 10px 0;
+      font-weight: bold;
+    }
   }
 }
 
-@media screen and (max-width: 800px){
-  .interview{
-    .detail{
+@media screen and (max-width: 800px) {
+  .interview {
+    .detail {
       margin: 20px 0;
-      .item{
+      .item {
         width: calc(100% / 3 - 10px);
         padding: 15px 0;
         margin-bottom: 20px;
-        .pic{
+        .pic {
           height: 70px;
         }
-        .text{
+        .text {
           line-height: 24px;
         }
       }
     }
-    .detail2{
-      .pic{
-        img{
+    .detail2 {
+      .pic {
+        img {
           width: 100%;
         }
+      }
+      .merit-title {
+        font-size: 18px;
+        margin: 5px 0;
+        font-weight: bold;
       }
     }
   }
 }
 
-@media screen and (max-width: 600px){
-  .interview{
-    .detail{
-      .item{
+@media screen and (max-width: 600px) {
+  .interview {
+    .detail {
+      .item {
         width: calc(100% / 3 - 5px);
         padding: 5px 0;
         margin-bottom: 10px;
-        .des{
+        .des {
           margin: 10px 0;
           font-size: 14px;
         }
-        .btn{
+        .pic{
+          height: auto;
+          img{
+            width: 80%;
+          }
+        }
+        .btn {
           color: #fff;
           background-color: #0877c2;
           height: 26px;

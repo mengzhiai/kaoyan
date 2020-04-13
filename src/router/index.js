@@ -50,6 +50,16 @@ const routes = [
         component: () => import("../views/contact/Contact.vue")
       }
     ]
+  },
+  {
+    path: "/pc",
+    name: "Home",
+    component: () => import("../views/newPage/pc.vue"),
+  },
+  {
+    path: "/h5",
+    name: "h5",
+    component: () => import("../views/newPage/h5.vue"),
   }
 ];
 
